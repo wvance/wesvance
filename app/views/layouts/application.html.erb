@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<!-- NEED TO DOWNLOAD JQUERY -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1250);
+        return false;
+      }
+    }
+  });
+});
+</script>
+<head>
+  <title>Wesley Vance | @WesAdvance</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+	<!-- This is a test header -->
+</header>
+
+<div class="bodyWrapper">
+	<%= yield %>
+</div>
+
+</body>
+</html>
