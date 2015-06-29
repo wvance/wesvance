@@ -16,7 +16,7 @@
  */
 
 /*BODY*/
-h1, h3, h6{
+h1, h2, h3, h4, h6{
 	font-family: 'Raleway';
 }
 html, body{
@@ -27,13 +27,15 @@ p{
 	font-size: 16px;
 	color: #696969;
 }
-
 .bodyWrapper{
 	padding-bottom: 30px;
 }
 /*SPAN TAGS*/
 .yellow{
 	color: #FFCC00;
+}
+.black{
+	color:black;
 }
 .center{
 	text-align: center;
@@ -116,7 +118,12 @@ ul.links{
 	padding-top:35vh;
 	text-align: center;
 }
-
+.newPostSection{
+	padding-top: 20vh;
+}
 .navBreak{
 	width:75%;
+}
+.projectsSection{
+	height:35vh;
 }

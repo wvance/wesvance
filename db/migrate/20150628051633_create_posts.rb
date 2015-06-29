@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.text :body
+      t.string :location
       t.boolean :is_active
       t.date :date
       t.time :time

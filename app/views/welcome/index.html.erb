@@ -4,7 +4,7 @@
 		<div class="sideBarSection">
 			<div class="profile">
 				<div class="profileName">
-					<%= image_tag "profilePic.jpg", :class=>"profileImg img-circle" %>
+					<%= image_tag "profilePic.jpg", :class=>"profileImg img-circle"%>
 					<h1>Wes<span class="yellow">Vance</span></h1>
 					<h6 class="childElement"><a href="https://twitter.com/WesAdvance">@WesAdvance</a></h6>
 				</div> <!-- KEEP THIS AT THE TOP LEFT CORNER -->
@@ -16,25 +16,101 @@
 						<h3><a href="#about">About Me</a></h3>
 					</li>
 					<li>
-						<h3><a href="#map">Blog</a></h3>
+						<h3><a href="#projects">Projects</a></h3>
 					</li>
 					<li>
-						<h3><a href="#blog">Projects</a></h3>
+						<h3><a href="#map">Blog</a></h3>
 					</li>
 					<% if admin_signed_in?%>
 						<li>
-							<h3><a href ="#">Create</a></h3>
+							<h3><a href="#create">Create</a></h3>
 						</li>
 					<%end%>
 				</ul>
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- ABOUT ME -->
-	<div class="col-sm-5 col-md-6 col-lg-7">
-		<div id="about" class="aboutMeSection">
-			<h3>Twenty years fron now you will be more disappointed by the things that you didnt do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.</h3><p>-Mark Twain</p>
+	<div class="col-sm-5 col-sm-offset-1 col-md-5 col-lg-6">
+		<!-- IF ADMIN, DISPLAY NEW POST FORM: ELSE DISPLAY ABOUT ME -->
+		<% if admin_signed_in?%>
+			<%= form_for(@post) do |f| %>
+			  <% if @post.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+			      <ul>
+			      <% @post.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+			  
+			  <div class="row newPostSection" id="create">
+			    <div class="col-sm-12">
+			    	<h1>Create</h1>
+			    	<div class="row">
+				    	<div class="col-sm-6 form-group">
+					      <div class="field">
+					        <!-- <%= f.label :title %><br> -->
+					        <%= f.text_field :title, class: "form-control", placeholder:"Post Title" %>
+					      </div>
+				      </div>				      
+				    </div>			  			     	    
+			      <div class="row">
+				      <div class="col-sm-12 form-group">
+					      <div class="field">
+					        <!-- <%= f.label :body %><br> -->
+					        <%= f.text_area :body, class: "form-control", rows: "10", placeholder:"Insert post body here in HTML"%>
+					      </div>
+				      </div>
+			      </div>
+			      <div class="row">
+			      	<div class="col-sm-12 form-group">
+			      		<div class="field">
+					        <div class="checkbox">
+						        <label>
+						           <%= f.check_box :is_active %> Active
+						        </label>
+						      </div>
+									 <%= f.submit "Submit", class: "btn btn-default"%>						      	
+				      	</div>					     				    
+			      	</div>	
+		      	</div>
+			    </div>
+			    <!-- PUT LINK TO ALL POSTS HERE -->
+			  </div>
+			<% end %>
+
+		<% else %>
+			<div id="about" class="aboutMeSection">
+				<hr>
+					<h3>
+						Senior studying Computer Science at Texas A&M University. Focus on small business and entrepreneurship through the development of <span class="yellow">Rails & Meteor.js</span> applicaitons. Currently developing custom ServiceNow application at Genworth Financial in Raleigh, NC.
+					</h3>
+				<hr>
+			</div>
+		<% end %>
+
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<div id="projects" class="projectsSection"> 
+			<div class="row">
+				<div class="col-sm-4">
+					<h2 class="center">JetPack</h2>
+					<p></p>
+				</div>
+				<div class="col-sm-4">
+					<h2 class="center">Hyperloop Pod Contest</h2>
+				</div>
+				<div class="col-sm-4">
+					<h2 class="center">BlackBox</h2>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -51,58 +127,27 @@
 <div class="row">
 	<!-- BLOG -->
 	<div class="col-sm-8 col-sm-offset-2">
-		<div id="blog" class="blogSection">
-			<div class="blogTitle">
-				<h1>This is a thing I call a 'blog'</h1>
-			</div>
-			<div class="blogTags">
-				<h6 class="childElement">July 5th, 2015</h6>
-			</div>
-			<div class="blogBody">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="blogTags">
-				<h6>Tag 1 : Tag 2 : Tag 3</h6>
-			</div>
-			<hr>
-		</div>
-
-	</div>
-	<div class="col-sm-8 col-sm-offset-2">
-		<div id="blog" class="blogSection">
-			<div class="blogTitle">
-				<h1>This is a thing I call a 'blog'</h1>
-			</div>
-			<div class="blogTags">
-				<h6 class="childElement">July 5th, 2015</h6>
-			</div>
-			<div class="blogBody">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="blogTags">
-				<h6>Tag 1 : Tag 2 : Tag 3</h6>
-			</div>
-			<hr>
-		</div>
-
-	</div>
-	<div class="col-sm-8 col-sm-offset-2">
-		<div id="blog" class="blogSection">
-			<div class="blogTitle">
-				<h1>This is a thing I call a 'blog'</h1>
-			</div>
-			<div class="blogTags">
-				<h6 class="childElement">July 5th, 2015</h6>
-			</div>
-			<div class="blogBody">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="blogTags">
-				<h6>Tag 1 : Tag 2 : Tag 3</h6>
-			</div>
-			<hr>
-		</div>
-
+		<% if @posts.count > 0 %>
+			<% @posts.each do |post| %>
+				<% if post.is_active %>
+				<div id="blog" class="blogSection">
+					<div class="blogTitle">
+						<h1><%= post.title %></h1>
+					</div>
+					<div class="blogTags">
+						<h6 class="childElement"><%= post.date %></h6>
+					</div>
+					<div class="blogBody">
+						<p><%=post.body.html_safe%></p>
+					</div>
+					<div class="blogTags">
+						<h6>Tag 1 : Tag 2 : Tag 3</h6>
+					</div>
+					<hr>
+				</div>
+				<%end%>
+			<%end%>
+		<%end%>
 	</div>
 </div>
 

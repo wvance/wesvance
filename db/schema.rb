@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150629032754) do
     t.string   "title"
     t.string   "author"
     t.text     "body"
+    t.string   "location"
     t.boolean  "is_active"
     t.date     "date"
     t.time     "time"
