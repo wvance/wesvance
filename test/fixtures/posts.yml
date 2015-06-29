@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: MyString
+  body: MyText
+  is_active: false
+  date: 2015-06-28
+  time: 2015-06-28 01:16:33
+  is_comments: false
+  rating: 1
+
+two:
+  title: MyString
+  author: MyString
+  body: MyText
+  is_active: false
+  date: 2015-06-28
+  time: 2015-06-28 01:16:33
+  is_comments: false
+  rating: 1
