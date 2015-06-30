@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-  	@posts = Post.all.order('posts.dateTime DESC').page(params[:page]).per(4)
+  	@posts = Post.all.order('posts.name ASC').page(params[:page]).per(4)
   	@post = Post.new(:is_active => true)
 
   	# THIS IS FOR THE DISPLAY MAP
