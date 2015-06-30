@@ -27,13 +27,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author = current_admin.id
+    # @post.ip = '206.83.160.20'
     @post.ip = request.remote_ip
-    @post.date = Date.today
+    @post.dateTime = DateTime.current;
 
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        format.json { render :show, status: :created, address: @post }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+        format.json { render :show, status: :ok, address: @post }
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -73,6 +74,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :author, :body, :is_active, :date, :time, :is_comments, :rating, :ip, :location)
+      params.require(:post).permit(:title, :author, :body, :is_active, :dateTime, :is_comments, :rating, :ip, :address, :longitude, :latitude)
     end
 end

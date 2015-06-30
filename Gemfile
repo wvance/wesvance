@@ -6,7 +6,7 @@ gem "devise"
 
 # gem 'gravtastic'                    # ADDED GRAVATAR: PROFILE PICTURE
 gem 'kaminari'                      # PAGINATION GEM
-
+gem 'geocoder' 											# IP TO LOCATION
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

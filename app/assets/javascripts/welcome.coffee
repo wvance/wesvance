@@ -1,3 +1,26 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
+# initialize the map on the 'map' div
+# with the given map ID, center, and zoom
+$(document).ready ->
+	L.mapbox.accessToken = 'pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ';
+	map = L.mapbox.map('map', 'wesvance.miaef27b', {
+  	zoomControl: false
+	}).setView([39.5, -98.35], 4)
+
+	map.touchZoom.disable();
+	map.doubleClickZoom.disable();
+	map.scrollWheelZoom.disable();
+	map.attributionControl = false;
+	
+	# get JSON object
+	# on success, parse it and
+	# hand it over to MapBox for mapping
+	$.ajax
+	  dataType: 'text'
+	  url: 'welcome/index.json'
+	  success: (data) ->
+	    geojson = $.parseJSON(data)
+	    map.featureLayer.setGeoJSON(geojson)

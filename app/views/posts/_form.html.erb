@@ -30,12 +30,8 @@
         <%= f.check_box :is_active %>
       </div>
       <div class="field">
-        <%= f.label :date %><br>
-        <%= f.date_select :date %>
-      </div>
-      <div class="field">
-        <%= f.label :time %><br>
-        <%= f.time_select :time %>
+        <%= f.label :dateTime %><br>
+        <%= f.datetime_select :dateTime %>
       </div>
       <div class="field">
         <%= f.label :is_comments %><br>
@@ -45,6 +41,19 @@
         <%= f.label :rating %><br>
         <%= f.number_field :rating %>
       </div>
+      <div class="field">
+        <%= f.label :ip %><br>
+        <%= f.text_field :ip %>
+      </div>
+      <div class="field">
+        <%= f.label :latitude %><br>
+        <%= f.text_field :latitude %>
+      </div>
+      <div class="field">
+        <%= f.label :longitude %><br>
+        <%= f.text_field :longitude %>
+      </div>
+
       <div class="actions">
         <%= f.submit %>
       </div>

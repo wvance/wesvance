@@ -14,12 +14,12 @@
 				<ul class="links">
 					<li>
 						<h3><a href="#about">About Me</a></h3>
-					</li>
-					<!-- <li>
-						<h3><a href="#projects">Projects</a></h3>
-					</li> -->
+					</li>					
 					<li>
 						<h3><a href="#map">Blog</a></h3>
+					</li>
+					<li>
+						<h3><a href="#projects">Connect</a></h3>
 					</li>
 					<% if admin_signed_in?%>
 						<li>
@@ -30,7 +30,6 @@
 			</div>
 		</div>
 	</div>
-	
 	<!-- ABOUT ME -->
 	<div class="col-sm-5 col-sm-offset-1 col-md-5 col-lg-6">
 		<!-- IF ADMIN, DISPLAY NEW POST FORM: ELSE DISPLAY ABOUT ME -->
@@ -119,11 +118,8 @@
 </div> -->
 
 <div class="row">
-	<!-- MAP -->
 	<div class="col-sm-12">
-		<div id="map" class="mapSection">
-			<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/wesvance.miaef27b/attribution.html?access_token=pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ'></iframe>
-		</div>
+		<div id="map" class="mapSection"></div>
 	</div>
 </div>
 
@@ -138,8 +134,8 @@
 						<h1><%= post.title %></h1>
 					</div>
 					<div class="blogTags">
-						<h6 class="childElement"><%= post.date %></h6>
-						<h6 class="childElement"><%= post.ip %></h6>
+						<h6 class="childElement"><%= post.dateTime %></h6>
+						<h6 class="childElement"><%= post.latitude %> & <%= post.longitude %></h6>
 					</div>
 					<div class="blogBody">
 						<p><%=post.body.html_safe%></p>
