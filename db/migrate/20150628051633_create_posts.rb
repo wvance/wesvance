@@ -5,12 +5,12 @@ class CreatePosts < ActiveRecord::Migration
       t.string :author
       t.text :body
       t.string :location
+      t.string :ip
       t.boolean :is_active
       t.date :date
       t.time :time
       t.boolean :is_comments
       t.integer :rating
-
       t.timestamps null: false
     end
   end

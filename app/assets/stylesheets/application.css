@@ -15,10 +15,9 @@
  *= require_self
  */
 @import url(http://fonts.googleapis.com/css?family=Raleway:100);
-
 /*BODY*/
 h1, h2, h3, h4, h6{
-	font-family: 'Raleway';
+	font-family: 'Raleway'; font-weight: 100;
 }
 html, body{
 	height: 100%;
@@ -51,6 +50,9 @@ p{
 .childElement{
 	margin-top: -10px;
 	margin-left: 20px;
+}
+.pagFooter{
+	text-align: center;
 }
 
 /*LINKS*/

@@ -15,9 +15,9 @@
 					<li>
 						<h3><a href="#about">About Me</a></h3>
 					</li>
-					<li>
+					<!-- <li>
 						<h3><a href="#projects">Projects</a></h3>
-					</li>
+					</li> -->
 					<li>
 						<h3><a href="#map">Blog</a></h3>
 					</li>
@@ -72,10 +72,11 @@
 			      		<div class="field">
 					        <div class="checkbox">
 						        <label>
-						           <%= f.check_box :is_active %> Active
+						          <%= f.check_box :is_active %> Active
 						        </label>
 						      </div>
-									 <%= f.submit "Submit", class: "btn btn-default"%>						      	
+									
+									<%= f.submit "Submit", class: "btn btn-default"%>						      	
 				      	</div>					     				    
 			      	</div>	
 		      	</div>
@@ -96,24 +97,26 @@
 
 	</div>
 </div>
-<div class="row">
+<!-- <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-		<div id="projects" class="projectsSection"> 
+		<div id="projects" class="projectsSection center"> 
 			<div class="row">
 				<div class="col-sm-4">
 					<h2 class="center">JetPack</h2>
-					<p></p>
+					<h3>Application that enables students to share and collaborate on ideas helping them form their thoughts into actions.</h3>
 				</div>
 				<div class="col-sm-4">
 					<h2 class="center">Hyperloop Pod Contest</h2>
+					<h3>A Texas A&M team taking on Elon Musks Hyperloop Pod contest, taking part this next semester.</h3>
 				</div>
 				<div class="col-sm-4">
 					<h2 class="center">BlackBox</h2>
+					<h3>Bringing together all of your data, across all of your platforms, enabling a collective and wholistic picture of your digital presence.</h3>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="row">
 	<!-- MAP -->
@@ -136,18 +139,20 @@
 					</div>
 					<div class="blogTags">
 						<h6 class="childElement"><%= post.date %></h6>
+						<h6 class="childElement"><%= post.ip %></h6>
 					</div>
 					<div class="blogBody">
 						<p><%=post.body.html_safe%></p>
-					</div>
-					<div class="blogTags">
-						<h6>Tag 1 : Tag 2 : Tag 3</h6>
 					</div>
 					<hr>
 				</div>
 				<%end%>
 			<%end%>
 		<%end%>
+		<div class="pagFooter">
+			<h4><%= paginate @posts %></h4>
+			<!-- <%= page_entries_info @posts %> -->
+		</div>
 	</div>
 </div>
 
