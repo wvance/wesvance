@@ -35,6 +35,13 @@
 		<!-- IF ADMIN, DISPLAY NEW POST FORM: ELSE DISPLAY ABOUT ME -->
 		<% if admin_signed_in?%>
 			<%= form_for(@post) do |f| %>
+
+				<%- unless @lat_lng %>
+					<script>
+					  getGeoLocation();
+					</script>
+				<%- end %>
+
 			  <% if @post.errors.any? %>
 			    <div id="error_explanation">
 			      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -152,7 +159,7 @@
 	</div>
 </div>
 
-	<%= debug @geojson %>
+<%= debug @geojson %>
 
 <!-- OTHER -->
 <div class="topBottonBox">

@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
   	@posts = Post.all.order('posts.title DESC').page(params[:page]).per(4)
   	@post = Post.new(:is_active => true)
 
+
   	# THIS IS FOR THE DISPLAY MAP
 	  @allPosts = Post.all
 		@geojson = Array.new

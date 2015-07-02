@@ -28,7 +28,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.author = current_admin.id
     # @post.ip = '206.83.160.20'
-    @post.ip = request.remote_ip
+
+    # @post.ip = request.remote_ip
+    # FOR MORE PRECISE GEO LOCATION 
+    @lat_lng = cookies[:lat_lng].split("|")
+    @post.latitude = @lat_lng[0]
+    @post.longitude = @lat_lng[1]
     @post.dateTime = DateTime.current;
 
     respond_to do |format|
