@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     # @post.ip = '206.83.160.20'
 
     # FOR MORE PRECISE GEO LOCATION 
-    if cookies[:lat_lng] != ''
+    if cookies[:lat_lng] != nil
       @lat_lng = cookies[:lat_lng].split("|")
       @post.latitude = @lat_lng[0]
       @post.longitude = @lat_lng[1]

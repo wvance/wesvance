@@ -7,14 +7,14 @@
 $(document).ready ->
 	L.mapbox.accessToken = 'pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ';
 	map = L.mapbox.map('map', 'wesvance.miaef27b', {
-  	zoomControl: false
+  	# zoomControl: false
 	}).setView([39.5, -98.35], 4)
 
-	map.touchZoom.disable();
+	# map.touchZoom.disable();
 	map.doubleClickZoom.disable();
 	map.scrollWheelZoom.disable();
 	map.attributionControl = false;
-	
+
 	# get JSON object
 	# on success, parse it and
 	# hand it over to MapBox for mapping
