@@ -31,7 +31,10 @@ class PostsController < ApplicationController
 
     # @post.ip = request.remote_ip
     # FOR MORE PRECISE GEO LOCATION 
-    @lat_lng = cookies[:lat_lng].split("|")
+    if cookies[:lat_lng] != ''
+      @lat_lng = cookies[:lat_lng].split("|")
+    end
+
     @post.latitude = @lat_lng[0]
     @post.longitude = @lat_lng[1]
     @post.dateTime = DateTime.current;
