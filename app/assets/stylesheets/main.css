@@ -136,3 +136,6 @@ ul.links{
 	width:100%;
 	height:500px;
 }
+.flash{
+	position: fixed;
+}

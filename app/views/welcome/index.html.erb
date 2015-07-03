@@ -121,6 +121,7 @@
 		<% if @posts.count > 0 %>
 			<% @posts.each do |post| %>
 				<% if post.is_active %>
+					<hr>
 					<div id="blog" class="blogSection">
 						<div class="blogTitle links">
 							<%= link_to controller: "posts", action: "show", id: post do %>
@@ -134,7 +135,6 @@
 						<div class="blogBody">
 							<p><%=post.body.capitalize.html_safe%></p>
 						</div>
-						<hr>
 					</div>
 				<%end%>
 			<%end%>
