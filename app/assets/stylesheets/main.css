@@ -120,8 +120,16 @@ ul.links{
 }
 
 .aboutMeSection{
-	padding-top:35vh;
+	position: absolute;
 	text-align: center;
+  top:50%;
+  left: 0%;
+  transform:translate(0%, -50%);
+  -webkit-transform:translate(0%, -50%);
+}
+.aboutMeCol{
+	display:block;
+	height:100vh;
 }
 .newPostSection{
 	padding-top: 20vh;
