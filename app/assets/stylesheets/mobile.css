@@ -1,0 +1,14 @@
+@media screen and (max-width: 767px) {
+  #navBar {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+  #mobileNav{
+  	visibility: visible;
+  	display: all;
+  }
+}
