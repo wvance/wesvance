@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html>
-<!-- MAPBOX -->
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+	<!-- MAPBOX -->
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 
-<head>
-  <title>Wesley Vance | @WesAdvance</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<header>
-	<!-- This is a test header -->
-</header>
+	<head>
+	  <title>Wesley Vance | @WesAdvance</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
 
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %> center"><%= value %></div>
-<% end %>
-      
-<div class="bodyWrapper">
-	<%= yield %>
-	
-	<!-- GO TO HOMEPAGE -->
-	<div class="topBottonBox">
-		<% if current_page?(controller: 'welcome', action: 'index') %>
-			<a href="#top"><i class="fa fa-chevron-up pull-right topButton"></i></a>
-		<% else %>
-			<%= link_to index_path() do %>
-				<i class="fa fa-chevron-up pull-right topButton"></i>
-			<%end%>
+	<body>
+		<% if !current_page?(controller: 'welcome', action: 'index') %>
+			<header>
+				<div class="row">
+					<div class="col-sm-5 col-md-4 col-lg-3 center">
+						<%= link_to index_path() do %>
+							<h1>Wes<span class="yellow">Vance</span></h1>
+						<%end%>
+						<h6 class="childElement">
+							<%= link_to "https://twitter.com/WesAdvance", :target => "_blank" do %>
+								@WesAdvance
+							<% end %>
+						</h6>
+					</div>
+				</div>
+			</header>
 		<%end%>
-	</div>
-</div>
 
-</body>
+		<% flash.each do |key, value| %>
+		  <div class="alert alert-<%= key %> center"><%= value %></div>
+		<% end %>
+		      
+		<div class="bodyWrapper">
+			<%= yield %>
+		</div>
+
+		<footer>
+			<hr>
+			<div class="row" id="connect">
+				<div class="col-xs-12">
+					<h4 class="center links">
+						<%= link_to "https://twitter.com/WesAdvance", :target => "_blank" do %>
+							<i class="fa fa-twitter"></i>
+						<% end %> | 
+						<%= link_to "https://www.linkedin.com/in/wesvance", :target => "_blank" do %>
+							<i class="fa fa-linkedin"></i>
+						<% end %> | 
+						<%= link_to "https://www.facebook.com/wesley.vance32", :target => "_blank" do %>
+							<i class="fa fa-facebook"></i>
+						<% end %> | 
+						<%= link_to "https://github.com/wvance", :target => "_blank" do %>
+							<i class="fa fa-github"></i>
+						<% end %> | 
+						<%= link_to asset_path("Docs/StartupResume.pdf"), :target => "_blank" do %>
+							<i class="fa fa-file-text-o"></i>
+						<% end %> 
+					</h4>
+					<h6 class="center">Made with love by <span class="yellow"><b>Wesley Vance</b></span></h6>
+				</div>
+			</div>
+		</footer>
+
+		<div class="topBottonBox">
+			<% if current_page?(controller: 'welcome', action: 'index') %>
+				<a href="#top"><i class="fa fa-chevron-up pull-right topButton"></i></a>
+			<% else %>
+				<%= link_to index_path() do %>
+					<i class="fa fa-chevron-up pull-right topButton"></i>
+				<%end%>
+			<%end%>
+		</div>
+			
+	</body>
 </html>

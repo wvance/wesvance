@@ -121,21 +121,21 @@
 		<% if @posts.count > 0 %>
 			<% @posts.each do |post| %>
 				<% if post.is_active %>
-				<div id="blog" class="blogSection">
-					<div class="blogTitle links">
-						<%= link_to controller: "posts", action: "show", id: post do %>
-							<h1><%= post.title.capitalize %></h1>
-						<%end%>
+					<div id="blog" class="blogSection">
+						<div class="blogTitle links">
+							<%= link_to controller: "posts", action: "show", id: post do %>
+								<h1><%= post.title.capitalize %></h1>
+							<%end%>
+						</div>
+						<div class="blogTags">
+							<h6 class="childElement"><%= formatDate(post.date) %></h6>
+							<!-- <h6 class="childElement"><%= post.latitude %> & <%= post.longitude %></h6> -->
+						</div>
+						<div class="blogBody">
+							<p><%=post.body.capitalize.html_safe%></p>
+						</div>
+						<hr>
 					</div>
-					<div class="blogTags">
-						<h6 class="childElement"><%= formatDate(post.date) %></h6>
-						<!-- <h6 class="childElement"><%= post.latitude %> & <%= post.longitude %></h6> -->
-					</div>
-					<div class="blogBody">
-						<p><%=post.body.capitalize.html_safe%></p>
-					</div>
-					<hr>
-				</div>
 				<%end%>
 			<%end%>
 		<%end%>
@@ -143,29 +143,6 @@
 			<h4><%= paginate @posts %></h4>
 			<!-- <%= page_entries_info @posts %> -->
 		</div>
-	</div>
-</div>
-
-<div class="row" id="connect">
-	<div class="col-xs-12">
-		<h4 class="center links">
-			<%= link_to "https://twitter.com/WesAdvance", :target => "_blank" do %>
-				<i class="fa fa-twitter"></i>
-			<% end %> | 
-			<%= link_to "https://www.linkedin.com/in/wesvance", :target => "_blank" do %>
-				<i class="fa fa-linkedin"></i>
-			<% end %> | 
-			<%= link_to "https://www.facebook.com/wesley.vance32", :target => "_blank" do %>
-				<i class="fa fa-facebook"></i>
-			<% end %> | 
-			<%= link_to "https://github.com/wvance", :target => "_blank" do %>
-				<i class="fa fa-github"></i>
-			<% end %> | 
-			<%= link_to asset_path("Docs/StartupResume.pdf"), :target => "_blank" do %>
-				<i class="fa fa-file-text-o"></i>
-			<% end %> 
-		</h4>
-		<h6 class="center"> Made with love by <span class="yellow"><b>Wesley Vance</b></span></h6>
 	</div>
 </div>
 <!-- <%= debug @geojson %> -->

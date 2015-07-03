@@ -31,7 +31,10 @@ p{
 	font-size: 16px;
 	color: #696969;
 }
+header h1{
+	margin-top: 8px;
 
+}
 .postContent{
  font-size: 18px; 
  line-height: 27px;
