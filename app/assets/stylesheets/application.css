@@ -94,7 +94,7 @@ a {
 }
 
 /*NAV BAR LINKS*/
-ul.links a:hover {
+.links a:hover {
   color: #FFCC00;
 }
 

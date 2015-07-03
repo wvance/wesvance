@@ -6,26 +6,31 @@
 				<div class="profileName">
 					<%= image_tag "profilePic.jpg", :class=>"profileImg img-circle"%>
 					<h1>Wes<span class="yellow">Vance</span></h1>
-					<h6 class="childElement"><a href="https://twitter.com/WesAdvance">@WesAdvance</a></h6>
+					<h6 class="childElement">
+						<%= link_to "https://twitter.com/WesAdvance", :target => "_blank" do %>
+							@WesAdvance
+						<% end %>
+					</h6>
 				</div> <!-- KEEP THIS AT THE TOP LEFT CORNER -->
 			</div>
 			<hr class="navBreak">
 			<div class="navBarLinks">
 				<ul class="links">
-					<li>
-						<h3><a href="#about">About Me</a></h3>
-					</li>					
-					<li>
-						<h3><a href="#map">Blog</a></h3>
-					</li>
-					<li>
-						<h3><a href="#projects">Connect</a></h3>
-					</li>
 					<% if admin_signed_in?%>
 						<li>
 							<h3><a href="#create">Create</a></h3>
 						</li>
-					<%end%>
+					<%else%>
+						<li>
+							<h3><a href="#about">About Me</a></h3>
+						</li>	
+					<%end%>			
+					<li>
+						<h3><a href="#map">Blog</a></h3>
+					</li>
+					<li>
+						<h3><a href="#connect">Connect</a></h3>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -103,26 +108,6 @@
 
 	</div>
 </div>
-<!-- <div class="row">
-	<div class="col-sm-10 col-sm-offset-1">
-		<div id="projects" class="projectsSection center"> 
-			<div class="row">
-				<div class="col-sm-4">
-					<h2 class="center">JetPack</h2>
-					<h3>Application that enables students to share and collaborate on ideas helping them form their thoughts into actions.</h3>
-				</div>
-				<div class="col-sm-4">
-					<h2 class="center">Hyperloop Pod Contest</h2>
-					<h3>A Texas A&M team taking on Elon Musks Hyperloop Pod contest, taking part this next semester.</h3>
-				</div>
-				<div class="col-sm-4">
-					<h2 class="center">BlackBox</h2>
-					<h3>Bringing together all of your data, across all of your platforms, enabling a collective and wholistic picture of your digital presence.</h3>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
 
 <div class="row">
 	<div class="col-sm-12">
@@ -137,7 +122,7 @@
 			<% @posts.each do |post| %>
 				<% if post.is_active %>
 				<div id="blog" class="blogSection">
-					<div class="blogTitle">
+					<div class="blogTitle links">
 						<%= link_to controller: "posts", action: "show", id: post do %>
 							<h1><%= post.title.capitalize %></h1>
 						<%end%>
@@ -161,4 +146,26 @@
 	</div>
 </div>
 
+<div class="row" id="connect">
+	<div class="col-xs-12">
+		<h4 class="center links">
+			<%= link_to "https://twitter.com/WesAdvance", :target => "_blank" do %>
+				<i class="fa fa-twitter"></i>
+			<% end %> | 
+			<%= link_to "https://www.linkedin.com/in/wesvance", :target => "_blank" do %>
+				<i class="fa fa-linkedin"></i>
+			<% end %> | 
+			<%= link_to "https://www.facebook.com/wesley.vance32", :target => "_blank" do %>
+				<i class="fa fa-facebook"></i>
+			<% end %> | 
+			<%= link_to "https://github.com/wvance", :target => "_blank" do %>
+				<i class="fa fa-github"></i>
+			<% end %> | 
+			<%= link_to asset_path("Docs/StartupResume.pdf"), :target => "_blank" do %>
+				<i class="fa fa-file-text-o"></i>
+			<% end %> 
+		</h4>
+		<h6 class="center"> Made with love by <span class="yellow"><b>Wesley Vance</b></span></h6>
+	</div>
+</div>
 <!-- <%= debug @geojson %> -->
