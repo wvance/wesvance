@@ -11,4 +11,11 @@
   	visibility: visible;
   	display: all;
   }
+  .mapSection{
+  	width:100%;
+  	height:40vh;
+  }
+  .aboutMeSection{
+  	padding-top:25%;
+  }
 }

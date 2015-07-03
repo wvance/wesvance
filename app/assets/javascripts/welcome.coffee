@@ -8,7 +8,7 @@ $(document).ready ->
 	L.mapbox.accessToken = 'pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ';
 	map = L.mapbox.map('map', 'wesvance.miaef27b', {
   	# zoomControl: false
-	}).setView([39.5, -98.35], 4)
+	}).setView([39.5, -98.35], 3)
 
 	# map.touchZoom.disable();
 	map.doubleClickZoom.disable();
