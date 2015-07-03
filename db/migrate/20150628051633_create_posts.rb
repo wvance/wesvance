@@ -13,7 +13,8 @@ class CreatePosts < ActiveRecord::Migration
       t.boolean :is_active
       t.boolean :is_comments
 
-      t.datetime :dateTime
+      t.date :date
+      t.time :time
       t.integer :rating
       t.timestamps null: false
     end

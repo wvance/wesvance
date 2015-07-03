@@ -4,6 +4,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration
       ## Database authenticatable
       t.string :firstName
       t.string :lastName
+      t.string :fullName
       
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

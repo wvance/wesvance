@@ -138,14 +138,16 @@
 				<% if post.is_active %>
 				<div id="blog" class="blogSection">
 					<div class="blogTitle">
-						<h1><%= post.title %></h1>
+						<%= link_to controller: "posts", action: "show", id: post do %>
+							<h1><%= post.title.capitalize %></h1>
+						<%end%>
 					</div>
 					<div class="blogTags">
-						<h6 class="childElement"><%= post.dateTime %></h6>
-						<h6 class="childElement"><%= post.latitude %> & <%= post.longitude %></h6>
+						<h6 class="childElement"><%= formatDate(post.date) %></h6>
+						<!-- <h6 class="childElement"><%= post.latitude %> & <%= post.longitude %></h6> -->
 					</div>
 					<div class="blogBody">
-						<p><%=post.body.html_safe%></p>
+						<p><%=post.body.capitalize.html_safe%></p>
 					</div>
 					<hr>
 				</div>
@@ -160,8 +162,3 @@
 </div>
 
 <%= debug @geojson %>
-
-<!-- OTHER -->
-<div class="topBottonBox">
-	<a href="#top"><i class="fa fa-chevron-up pull-right topButton"></i></a>
-</div>

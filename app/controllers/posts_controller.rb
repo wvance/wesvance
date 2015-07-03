@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+
+    @posts = Post.all.order('posts.date DESC').page(params[:page]).per(10)
   end
 
   # GET /posts/1
@@ -26,10 +27,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post.author = current_admin.id
-    # @post.ip = '206.83.160.20'
+    @post.author = current_admin.email
 
-    # FOR MORE PRECISE GEO LOCATION 
+    # GEO LOCATION: USE PRECISE LAT LONG IF POSSIBLE, OTHERWISE USE IP CONVERSION
     if cookies[:lat_lng] != nil
       @lat_lng = cookies[:lat_lng].split("|")
       @post.latitude = @lat_lng[0]
@@ -38,7 +38,8 @@ class PostsController < ApplicationController
       @post.ip = request.remote_ip
     end
 
-    @post.dateTime = DateTime.current;
+    @post.date = Date.current;
+    @post.time = Time.current;
 
     respond_to do |format|
       if @post.save
@@ -83,6 +84,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :author, :body, :is_active, :dateTime, :is_comments, :rating, :ip, :address, :longitude, :latitude)
+      params.require(:post).permit(:title, :author, :body, :is_active, :date, :time, :is_comments, :rating, :ip, :address, :longitude, :latitude)
     end
 end
