@@ -10,11 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// 
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require twitter/bootstrap
 //= require turbolinks
+//
+//  CUSTOM HERE
+//= require "autogrow"
+//
+//= require_self
 //= require_tree .
 
 function getGeoLocation() {
@@ -40,6 +46,11 @@ $(document).ready(function(){
       }
     }
   });
+
 });
 
+// AUTOGROW TEXT AREAS
+$(document).ready(function(){
+  $('.autoGrowText').autogrow();
+});
 

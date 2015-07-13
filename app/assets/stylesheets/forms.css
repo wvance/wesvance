@@ -1,0 +1,10 @@
+.form-control{
+  border:none;
+  border-color: black;
+  box-shadow: none;
+}
+.form-control:focus {
+  border:none;
+  border-color: black;
+  box-shadow: none;
+}

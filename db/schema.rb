@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150629032754) do
   create_table "admins", force: :cascade do |t|
     t.string   "firstName"
     t.string   "lastName"
+    t.string   "fullName"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -38,16 +39,21 @@ ActiveRecord::Schema.define(version: 20150629032754) do
     t.string   "author"
     t.text     "body"
     t.string   "address"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "postal"
     t.string   "ip"
     t.string   "latitude"
     t.string   "longitude"
     t.boolean  "is_active"
-    t.boolean  "is_comments"
+    t.boolean  "has_comments"
     t.date     "date"
     t.time     "time"
     t.integer  "rating"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

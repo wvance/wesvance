@@ -5,7 +5,7 @@ gem "font-awesome-rails"
 gem "devise"
 gem 'jquery-turbolinks'             # FIXES BUGS FOR JQUERY & RAILS
 
-# gem 'gravtastic'                    # ADDED GRAVATAR: PROFILE PICTURE
+# gem 'gravtastic'                  # ADDED GRAVATAR: PROFILE PICTURE
 gem 'kaminari'                      # PAGINATION GEM
 gem 'geocoder' 											# IP TO LOCATION
 

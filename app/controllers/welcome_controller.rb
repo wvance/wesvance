@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-  	@posts = Post.all.order('posts.title DESC').page(params[:page]).per(4)
+  	@posts = Post.all.order('posts.title DESC').page(params[:page]).per(6)
   	@post = Post.new(:is_active => true)
 
 
@@ -18,6 +18,10 @@ class WelcomeController < ApplicationController
 			    },
 			    properties: {
 			      name: post.title,
+			      body: post.body, 
+			      date: post.date, 
+			      id: post.id,
+			      address: post.city + ", " + post.state,
 			      :'marker-color' => '#FFCC00',
 			      :'marker-size' => 'small'
 			    }

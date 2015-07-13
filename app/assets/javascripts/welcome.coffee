@@ -24,3 +24,25 @@ $(document).ready ->
 	  success: (data) ->
 	    geojson = $.parseJSON(data)
 	    map.featureLayer.setGeoJSON(geojson)
+
+	# add custom popups to each marker
+	
+	map.featureLayer.on 'layeradd', (e) ->
+	  marker = e.layer
+	  properties = marker.feature.properties
+
+	  # create custom popup
+	  popupContent =  '<a href = "/posts/' + properties.id + '">' + 
+	  								'<div class="popup">' +
+	                    '<h3>' + properties.name + '</h3>' +
+	                    '<p>' + properties.address + '</p>' +
+	                  '</div>'+
+	                  '</a>'
+
+	  # http://leafletjs.com/reference.html#popup
+	  marker.bindPopup popupContent,
+	    closeButton: false
+	    minWidth: 200
+	    keepInView: true
+
+

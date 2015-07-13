@@ -6,12 +6,18 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body
 
       t.string :address
+      t.string :street
+      t.string :city
+      t.string :state
+      t.string :country
+      t.string :postal
+
       t.string :ip
       t.string :latitude
-      t.string :longitude 
+      t.string :longitude
 
       t.boolean :is_active
-      t.boolean :is_comments
+      t.boolean :has_comments
 
       t.date :date
       t.time :time

@@ -38,8 +38,12 @@ class PostsController < ApplicationController
       @post.ip = request.remote_ip
     end
 
+    
     @post.date = Date.current;
     @post.time = Time.current;
+
+    # FOR NOW, ALWAYS SET COMMENTS TO ENABLED
+    @post.has_comments = true;
 
     respond_to do |format|
       if @post.save

@@ -18,7 +18,9 @@
 				<ul class="links">
 					<% if admin_signed_in?%>
 						<li>
-							<h3><a href="#create">Create</a></h3>
+							<%= link_to controller: "posts", action: "new" do %>	
+								<h3>New Post</h3>
+							<%end%>		
 						</li>
 					<%else%>
 						<li>
@@ -74,20 +76,24 @@
 				      <div class="col-xs-12 form-group">
 					      <div class="field">
 					        <!-- <%= f.label :body %><br> -->
-					        <%= f.text_area :body, class: "form-control", rows: "10", placeholder:"Insert post body here in HTML"%>
+					        <%= f.text_area :body, class: "form-control autoGrowText", rows: "10", placeholder:"Insert post body here in HTML"%>
 					      </div>
 				      </div>
 			      </div>
 			      <div class="row">
 			      	<div class="col-sm-12 form-group">
-			      		<div class="field">
-					        <div class="checkbox">
-						        <label>
-						          <%= f.check_box :is_active %> Active
-						        </label>
-						      </div>
-									
-									<%= f.submit "Submit", class: "btn btn-default"%>						      	
+			      		<div class="checkbox pull-left">
+					        <label>
+					          <%= f.check_box :is_active %> Active
+					        </label>
+					      </div>
+			      		<div class="field">	
+						      <div class = "pull-right">							
+							      <%= link_to controller: "posts", action: "new" do %>	
+											New Post
+										<%end%>	
+										<%= f.submit "Submit", class: "btn btn-default"%>
+									</div>							      	
 				      	</div>					     				    
 			      	</div>	
 		      	</div>
@@ -129,7 +135,7 @@
 							<%end%>
 						</div>
 						<div class="blogTags">
-							<h6 class="childElement"><%= formatDate(post.date) %></h6>
+							<h6 class="childElement"><%= formatDate(post.date) %> in <%= post.city%>, <%= post.state%></h6>
 							<!-- <h6 class="childElement"><%= post.latitude %> & <%= post.longitude %></h6> -->
 						</div>
 						<div class="blogBody">
