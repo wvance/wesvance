@@ -1,16 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:100);
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,300);
 @import url(http://fonts.googleapis.com/css?family=Roboto:300);
 /*BODY*/
-h1, h2, h3, h4, h5, h6{
-	font-family: 'Raleway'; font-weight: 100;
-}
-p{
-}
 html, body{
 	height: 100%;
 	font-family: 'Roboto'; font-weight: 300;
 }
-
+h1, h2, h3, h4{
+	font-family: 'Raleway'; font-weight: 200;
+}
+h5, h6{
+	font-family: 'Raleway'; font-weight: 300;
+}
 p{
 	font-size: 16px;
 	color: #696969;
@@ -19,17 +19,25 @@ header h1{
 	margin-top: 8px;
 
 }
+.inline{
+	display: inline;
+}
 .postContent{
  font-size: 18px; 
  line-height: 27px;
+ white-space: pre-line;
 }
 
 .bodyWrapper{
 	padding-bottom: 30px;
+	/*height:74vh;*/
 }
 /*SPAN TAGS*/
 .yellow{
 	color: #FFCC00;
+}
+.ruby{
+	color: #9B111E;
 }
 .black{
 	color:black;
@@ -50,7 +58,7 @@ header h1{
 	margin-right: 0;
 }
 .childElement{
-	margin-top: -10px;
+	margin-top: 10px;
 	margin-left: 20px;
 }
 .pagFooter{
@@ -132,7 +140,13 @@ ul.links{
 	height:100vh;
 }
 .newPostSection{
-	padding-top: 20vh;
+	position: absolute;
+	text-align: center;
+	width:100%;
+  top:50%;
+  left: 0%;
+  transform:translate(0%, -50%);
+  -webkit-transform:translate(0%, -50%);
 }
 .navBreak{
 	width:75%;
@@ -146,4 +160,13 @@ ul.links{
 }
 .flash{
 	position: fixed;
+}
+
+.newPost{
+	padding-top: 30px;
+	height:70vh;
+}
+
+input[type="text"].postTitle{
+    font-size:24px;
 }

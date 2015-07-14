@@ -1,30 +1,28 @@
+
+
 <!-- Title -->
 <div class="displayPost">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-      <h1><%= @post.title %></h1>
-      <h5 class="childElement"><%= @post.author %></h5>
-    </div>
-  </div>
-  <!-- BODY -->
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-      <hr>
-      <span class="postContent"><%= @post.body.html_safe %></span>
-    </div>
-  </div>
-  <!-- SOCIAL ROW -->
-  <div class="row postSocial">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-      <h5 class="right"><%= formatDate(@post.date) %></h5>
-    </div>
-  </div>
-  <% if admin_signed_in?%>
-    <div class="row">
-      <div class="col-xs-12 center">
-        <%= link_to 'Edit', edit_post_path(@post) %> |
-        <%= link_to 'All', posts_path %>
+      <div id="blog" class="blogSection">
+        <div class="blogTitle links">
+          <h1 class="inline"><%= @post.title.capitalize %></h1>
+          <% if admin_signed_in?%>
+            <h6 class="inline">
+              <%= link_to 'Edit', edit_post_path(@post) %> | 
+              <%= link_to 'All', posts_path %>
+            </h6>
+          <%end%>
+        </div>
+        <div class="blogTags">
+          <h6 class="childElement"><%= formatDate(@post.date) %> in <%= @post.city%>, <%= @post.state%></h6>
+        </div>
+        <div class="postContent">
+          <p><%=@post.body.capitalize.html_safe%></p>
+        </div>
+        <hr>
+        <h6 class="right"><%= @post.author %></h6>
       </div>
     </div>
-  <%end%>
+  </div>
 </div>

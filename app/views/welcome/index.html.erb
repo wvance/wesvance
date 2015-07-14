@@ -19,7 +19,12 @@
 					<% if admin_signed_in?%>
 						<li>
 							<%= link_to controller: "posts", action: "new" do %>	
-								<h3>New Post</h3>
+								<h3>New</h3>
+							<%end%>		
+						</li>
+						<li>
+							<%= link_to controller: "posts", action: "index" do %>	
+								<h3>All</h3>
 							<%end%>		
 						</li>
 					<%else%>
@@ -63,7 +68,6 @@
 			  
 			  <div class="row newPostSection" id="create">
 			    <div class="col-xs-12">
-			    	<h1>Create</h1>
 			    	<div class="row">
 				    	<div class="col-sm-6 form-group">
 					      <div class="field">
@@ -136,9 +140,8 @@
 						</div>
 						<div class="blogTags">
 							<h6 class="childElement"><%= formatDate(post.date) %> in <%= post.city%>, <%= post.state%></h6>
-							<!-- <h6 class="childElement"><%= post.latitude %> & <%= post.longitude %></h6> -->
 						</div>
-						<div class="blogBody">
+						<div class="postContent">
 							<p><%=post.body.capitalize.html_safe%></p>
 						</div>
 					</div>

@@ -18,6 +18,7 @@
 //= require turbolinks
 //
 //  CUSTOM HERE
+//= require quill
 //= require "autogrow"
 //
 //= require_self
