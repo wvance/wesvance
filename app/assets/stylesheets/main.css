@@ -25,7 +25,7 @@ header h1{
 .postContent{
  font-size: 18px; 
  line-height: 27px;
- white-space: pre-line;
+ white-space: pre-wrap;
 }
 
 .bodyWrapper{
