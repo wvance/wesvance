@@ -158,6 +158,11 @@ ul.links{
 	width:100%;
 	height:500px;
 }
+/*MAP FULL WIDTH W/NO GAP*/
+.fullWidth .col-xs-12{
+	padding-right: 0px;
+}
+
 .flash{
 	position: fixed;
 }
