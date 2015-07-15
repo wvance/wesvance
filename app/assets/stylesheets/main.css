@@ -17,7 +17,9 @@ p{
 }
 header h1{
 	margin-top: 8px;
-
+}
+.row{
+	margin-right: 0px;
 }
 .inline{
 	display: inline;
