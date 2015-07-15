@@ -20,7 +20,7 @@ $(document).ready ->
 	# hand it over to MapBox for mapping
 	$.ajax
 	  dataType: 'text'
-	  url: 'welcome/index.json'
+	  url: '/welcome/index.json'
 	  success: (data) ->
 	    geojson = $.parseJSON(data)
 	    map.featureLayer.setGeoJSON(geojson)
