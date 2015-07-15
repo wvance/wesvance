@@ -6,6 +6,8 @@ gem "devise"
 gem 'jquery-turbolinks'             # FIXES BUGS FOR JQUERY & RAILS
 gem 'quill-rails', '~> 0.1.0'       # RICH TEXT EDITER
 
+gem 'redcarpet'
+
 # gem 'gravtastic'                  # ADDED GRAVATAR: PROFILE PICTURE
 gem 'kaminari'                      # PAGINATION GEM
 gem 'geocoder' 											# IP TO LOCATION

@@ -23,9 +23,10 @@ header h1{
 	display: inline;
 }
 .postContent{
- font-size: 18px; 
- line-height: 27px;
- white-space: pre-wrap;
+ 	font-size: 16px; 
+ 	line-height: 27px;
+	margin-top: 20px;
+	color: #696969;
 }
 
 .bodyWrapper{

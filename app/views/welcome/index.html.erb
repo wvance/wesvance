@@ -69,7 +69,7 @@
 			  <div class="row newPostSection" id="create">
 			    <div class="col-xs-12">
 			    	<div class="row">
-				    	<div class="col-sm-6 form-group">
+				    	<div class="col-xs-12 form-group">
 					      <div class="field">
 					        <!-- <%= f.label :title %><br> -->
 					        <%= f.text_field :title, class: "form-control postTitle", placeholder:"Post Title" %>
@@ -142,7 +142,7 @@
 							<h6 class="childElement"><%= formatDate(post.date) %> in <%= post.city%>, <%= post.state%></h6>
 						</div>
 						<div class="postContent">
-							<p><%=post.body.html_safe%></p>
+							<%= truncate(markdown(post.body).html_safe, :length => 400, :omission => "" , :escape => false)%>
 						</div>
 					</div>
 				<%end%>
