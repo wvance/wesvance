@@ -6,9 +6,10 @@
         <div class="blogTitle links">
           <h1 class="inline"><span class="yellow"><%= @post.title %> </span></h1>
           <% if admin_signed_in?%>
-            <h6 class="inline">
+            <h6 class="inline">            
+              <%= link_to 'All', posts_path %> |
               <%= link_to 'Edit', edit_post_path(@post) %> | 
-              <%= link_to 'All', posts_path %>
+              <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }%>
             </h6>
           <%end%>
         </div>
