@@ -16,9 +16,9 @@
 //= require jquery.turbolinks
 //= require twitter/bootstrap
 //= require turbolinks
+//= require jquery-readyselector
 //
 //  CUSTOM HERE
-//= require quill
 //= require "autogrow"
 //
 //= require_self

@@ -2,9 +2,14 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+# http://vladigleba.com/blog/2013/11/14/using-mapbox-with-ruby-on-rails/
 # initialize the map on the 'map' div
 # with the given map ID, center, and zoom
-$(document).ready ->
+
+# EXAMPLE OF PAGE SPECIFIC JS
+# http://brandonhilkert.com/blog/page-specific-javascript-in-rails/
+
+$(".welcome.index").ready ->
 	L.mapbox.accessToken = 'pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ';
 	map = L.mapbox.map('map', 'wesvance.miaef27b', {
   	# zoomControl: false
