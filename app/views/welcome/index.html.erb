@@ -142,7 +142,7 @@
 							<h6 class="childElement"><%= formatDate(post.date) %> in <%= post.city%>, <%= post.state%></h6>
 						</div>
 						<div class="postContent">
-							<%= truncate(markdown(post.body).html_safe, :length => 400, :omission => "" , :escape => false)%>
+							<%= truncate(markdown(post.body).html_safe, :length => 400, :omission => "" , :escape => false,separator: /\s/, omission: '...')%>
 						</div>
 					</div>
 				<%end%>
