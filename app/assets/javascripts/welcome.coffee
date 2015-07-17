@@ -38,10 +38,10 @@ $(".welcome.index").ready ->
 
 	  # create custom popup
 	  popupContent =  '<a href = "/posts/' + properties.id + '">' + 
-	  								'<div class="popup">' +
-	                    '<h3>' + properties.name + '</h3>' +
-	                    '<p>' + properties.address + '</p>' +
-	                  '</div>'+
+		  								'<div class="popup">' +
+		                    '<h3>' + properties.name + '</h3>' +
+		                    '<p>'  + properties.address + '</p>' +
+		                  '</div>' +
 	                  '</a>'
 
 	  # http://leafletjs.com/reference.html#popup
