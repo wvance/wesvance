@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-  	@posts = Post.all.order('posts.title DESC').page(params[:page]).per(6)
+  	@posts = Post.all.order('posts.title ASC').page(params[:page]).per(6)
   	@post = Post.new(:is_active => true)
 
 
@@ -32,7 +32,5 @@ class WelcomeController < ApplicationController
 		  format.html
 		  format.json { render json: @geojson }  # respond with the created JSON object
 		end
-
   end
-
 end
