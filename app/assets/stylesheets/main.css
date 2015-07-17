@@ -5,6 +5,9 @@ html, body{
 	height: 100%;
 	font-family: 'Roboto'; font-weight: 300;
 	overflow-x: hidden;
+	overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+  
 }
 h1, h2, h3, h4{
 	font-family: 'Raleway'; font-weight: 200;
