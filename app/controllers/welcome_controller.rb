@@ -21,7 +21,9 @@ class WelcomeController < ApplicationController
 			      body: post.body, 
 			      date: post.date, 
 			      id: post.id,
-			      address: post.city + ", " + post.state,
+			      address: if (post.city.present? && post.state.present?) 
+			      	post.city + ", " + post.state
+			      end,
 			      :'marker-color' => '#FFCC00',
 			      :'marker-size' => 'small'
 			    }
