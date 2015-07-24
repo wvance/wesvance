@@ -38,31 +38,34 @@
 		<div class="bodyWrapper">
 			<%= yield %>
 		</div>
-
-		<footer>
-			<div class="row" id="connect">
-				<div class="col-xs-12">
-					<h4 class="center links">
-						<%= link_to "https://twitter.com/WesAdvance", :target => "_blank" do %>
-							<i class="fa fa-twitter"></i>
-						<% end %> | 
-						<%= link_to "https://www.linkedin.com/in/wesvance", :target => "_blank" do %>
-							<i class="fa fa-linkedin"></i>
-						<% end %> | 
-						<%= link_to "https://www.facebook.com/wesley.vance32", :target => "_blank" do %>
-							<i class="fa fa-facebook"></i>
-						<% end %> | 
-						<%= link_to "https://github.com/wvance", :target => "_blank" do %>
-							<i class="fa fa-github"></i>
-						<% end %> | 
-						<%= link_to asset_path("Docs/StartupResume.pdf"), :target => "_blank" do %>
-							<i class="fa fa-file-text-o"></i>
-						<% end %> 
-					</h4>
-					<h6 class="center">Made with love in <a href="http://rubyonrails.org" target="_blank"><span class="ruby">RoR</span></a> by <a href="mailto:wesley.vance@mac.com?Subject=Hello my name is: " target="_top"><span class="yellow">Wesley Vance</span></a></h6>
+		
+		<!-- FALLBACK DIV -->
+		<div>
+			<footer>
+				<div class="row" id="connect">
+					<div class="col-xs-12">
+						<h4 class="center links">
+							<%= link_to "https://twitter.com/WesAdvance", :target => "_blank" do %>
+								<i class="fa fa-twitter"></i>
+							<% end %> | 
+							<%= link_to "https://www.linkedin.com/in/wesvance", :target => "_blank" do %>
+								<i class="fa fa-linkedin"></i>
+							<% end %> | 
+							<%= link_to "https://www.facebook.com/wesley.vance32", :target => "_blank" do %>
+								<i class="fa fa-facebook"></i>
+							<% end %> | 
+							<%= link_to "https://github.com/wvance", :target => "_blank" do %>
+								<i class="fa fa-github"></i>
+							<% end %> | 
+							<%= link_to asset_path("Docs/StartupResume.pdf"), :target => "_blank" do %>
+								<i class="fa fa-file-text-o"></i>
+							<% end %> 
+						</h4>
+						<h6 class="center">Made with love in <a href="http://rubyonrails.org" target="_blank"><span class="ruby">RoR</span></a> by <a href="mailto:wesley.vance@mac.com?Subject=Hello my name is: " target="_top"><span class="yellow">Wesley Vance</span></a></h6>
+					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
 
 		<div class="topBottonBox">
 			<% if current_page?(root_path()) %>
