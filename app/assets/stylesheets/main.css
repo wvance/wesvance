@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:300);
 /*BODY*/
 body{
-	overflow-x: hidden;
+	overflow-x: hidden; 
 	overflow-y: scroll; /* has to be scroll, not auto */
 }
 html, body{
