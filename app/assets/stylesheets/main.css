@@ -179,7 +179,9 @@ ul.links{
 	padding-top: 30px;
 	height:70vh;
 }
-
+.adminBar{
+	padding-top: 20px;
+}
 input[type="text"].postTitle{
     font-size:24px;
 }

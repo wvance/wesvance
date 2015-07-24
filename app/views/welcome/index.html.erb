@@ -68,7 +68,15 @@
 			      </ul>
 			    </div>
 			  <% end %>
-			  
+			  <div class="adminBar right">
+			  	<h4>
+						<%= link_to(:controller => "posts", :action => "index" ) do%>
+							All Posts
+						<%end%> ❖
+			  		<%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+			  	</h4>
+			  	<hr>
+			  </div>
 			  <div class="row newPostSection" id="create">
 			    <div class="col-xs-12">
 			    	<div class="row">
@@ -119,7 +127,8 @@
 				<hr>
 				<div class="projectsBar center">
 					<h4>
-						<a href="http://jetapp.herokuapp.com", target="_blank"><span class="grey">JetPack</span></a> |
+						<a href="http://jetapp.herokuapp.com", target="_blank"><span class="grey">JetPack</span></a> 
+						❖
 						<a href="http://gearinup.meteor.com", target="_blank"><span class="grey">GearInUp</span></a>
 					</h4>
 				</div>
