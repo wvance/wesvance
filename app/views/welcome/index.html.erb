@@ -19,22 +19,9 @@
 			<hr class="navBreak">
 			<div class="navBarLinks">
 				<ul class="links">
-					<% if admin_signed_in?%>
-						<li>
-							<%= link_to controller: "posts", action: "new" do %>	
-								<h3>New</h3>
-							<%end%>		
-						</li>
-						<li>
-							<%= link_to controller: "posts", action: "index" do %>	
-								<h3>All</h3>
-							<%end%>		
-						</li>
-					<%else%>
-						<li>
-							<h3><a href="#about">About Me</a></h3>
-						</li>	
-					<%end%>			
+					<li>
+						<h3><a href="#about">About Me</a></h3>
+					</li>	
 					<li>
 						<h3><a href="#map">Blog</a></h3>
 					</li>
@@ -51,9 +38,13 @@
 		<% if admin_signed_in?%>
 			<div class="adminBar right">
 		  	<h4>
+		  		<%= link_to(:controller => "posts", :action => "new" ) do%>
+						New
+					<%end%> ❖
 					<%= link_to(:controller => "posts", :action => "index" ) do%>
 						All Posts
 					<%end%> ❖
+
 		  		<%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
 		  	</h4>
 		  </div>
