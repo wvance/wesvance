@@ -64,40 +64,60 @@
 <div id = "projects">
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-11 col-sm-3 mobileHide">
-			<%= image_tag "JetPack-iMac.png", :class=>"projectLogo img-responsive", :height=>"150px;", :width=>"300px;"%>
+			<%= link_to "http://jetapp.herokuapp.com", :target => "_blank" do %>
+				<%= image_tag "JetPack-iMac.png", :class=>"projectLogo img-responsive", :height=>"150px;", :width=>"300px;"%>
+			<%end%>
 		</div>
 		<div class="col-xs-offset-1 col-xs-11 col-sm-6">
-			<h1 class=""><a href="http://jetapp.herokuapp.com", target="_blank">JetPack</a></h1>
+			<h1 class="links"><a href="http://jetapp.herokuapp.com", target="_blank">JetPack</a></h1>
 			<p>It is my belief that everyone has an idea tucked away in their head. JetPack is a webapp to help people get their ideas down in an attempt to enable collaboration.</p>
-			<%= image_tag "rails.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
-			<%= image_tag "bootstrap.png", :height=>"50px;", :width=>"100px;"%>
+			<%= link_to "http://www.rubyonrails.org", :target => "_blank" do %>
+				<%= image_tag "rails.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<% end %> 
+			<%= link_to "https://github.com/wvance/jetapp", :target => "_blank" do %>
+				<%= image_tag "bootstrap.png", :height=>"50px;", :width=>"100px;"%>
+			<% end %>
 		</div>
 	</div>
 	<hr>
 
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-11 col-sm-6">
-			<h1 class=""><a href="http://gearinup.meteor.com", target="_blank">GearInUp</a></h1>
+			<h1 class="links"><a href="http://gearinup.meteor.com", target="_blank">GearInUp</a></h1>
 			<p>After many of my friends asked me to borrow my GoPro camera for a weekend, I decided to invest a little money and rent them out around the TAMU campus!</p>
-			<%= image_tag "meteor.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
-			<%= image_tag "angular.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
-			<%= image_tag "bootstrap.png", :height=>"50px;", :width=>"100px;"%>
+			<%= link_to "https://www.meteor.com", :target => "_blank" do %>
+				<%= image_tag "meteor.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<%end%>
+			<%= link_to "https://angularjs.org", :target => "_blank" do %>
+				<%= image_tag "angular.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<%end%>
+			<%= link_to "https://github.com/wvance/GearInUp", :target => "_blank" do %>
+				<%= image_tag "bootstrap.png", :height=>"50px;", :width=>"100px;"%>
+			<%end%>
 		</div>
 		<div class="col-xs-offset-1 col-xs-11 col-sm-3 mobileHide">
-			<%= image_tag "GearInUpLogo_Black.png", :class=>"projectLogo", :height=>"150px;", :width=>"150px;"%>
+			<%= link_to "http://gearinup.meteor.com", :target => "_blank" do %>
+				<%= image_tag "GearInUpLogo_Black.png", :class=>"projectLogo", :height=>"150px;", :width=>"150px;"%>
+			<%end%>
 		</div>
 	</div>
 	<hr>
 
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-11 col-sm-3 mobileHide">
-			<%= image_tag "MolotovCocktail_iPhone.png", :class=>"projectLogo img-responsive", :height=>"150px;", :width=>"300px;"%>
+			<%= link_to "https://github.com/wvance/MolotovCocktail", :target => "_blank" do %>
+				<%= image_tag "MolotovCocktail_iPhone.png", :class=>"projectLogo img-responsive", :height=>"150px;", :width=>"300px;"%>
+			<%end%>
 		</div>
 		<div class="col-xs-offset-1 col-xs-11 col-sm-6">
-			<h1 class=""><a href="https://github.com/wvance/MolotovCocktail", target="_blank">Molotov Cocktail</a></h1>
+			<h1 class="links"><a href="https://github.com/wvance/MolotovCocktail", target="_blank">Molotov Cocktail</a></h1>
 			<p>An iOS game developed for fun! The purpose is to throw Molotov Cocktails at incoming fire icons.</p>
-			<%= image_tag "ios.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
-			<%= image_tag "sprite.svg", :height=>"50px;", :width=>"50px;"%>
+			<%= link_to "https://developer.apple.com/ios/download/", :target => "_blank" do %>
+				<%= image_tag "ios.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<%end%>
+			<%= link_to "http://www.spritebuilder.com", :target => "_blank" do %>
+				<%= image_tag "sprite.svg", :height=>"50px;", :width=>"50px;"%>
+			<%end%>
 		</div>
 	</div>
 </div>
