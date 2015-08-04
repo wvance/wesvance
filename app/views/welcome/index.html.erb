@@ -20,7 +20,7 @@
 			<div class="navBarLinks">
 				<ul class="links">
 					<li>
-						<h3><a href="#about">About Me</a></h3>
+						<h3><a href="#projects">Projects</a></h3>
 					</li>	
 					<li>
 						<h3><a href="#map">Blog</a></h3>
@@ -56,18 +56,48 @@
 					Senior studying Computer Science at Texas A&M University. Focus on small business and entrepreneurship through the development of <span class="yellow">Rails & Meteor.js</span> applications. Currently developing custom ServiceNow application at Genworth Financial in Raleigh, NC.
 				</h3>
 			<hr>
-			<div class="projectsBar center">
-				<h4>
-					<a href="http://jetapp.herokuapp.com", target="_blank"><span class="grey">JetPack</span></a> 
-					❖
-					<%= link_to asset_path("Docs/StartupResume-Raleway.pdf"), :target => "_blank" do %>
-						<span class="grey">Resume</span>
-					<% end %> 
-					❖
-					<a href="http://gearinup.meteor.com", target="_blank"><span class="grey">GearInUp</span></a>
-					
-				</h4>
-			</div>
+		</div>
+	</div>
+</div>
+<hr>
+
+<div id = "projects">
+	<div class="row">
+		<div class="col-xs-offset-1 col-xs-11 col-sm-3 mobileHide">
+			<%= image_tag "JetPack-iMac.png", :class=>"projectLogo img-responsive", :height=>"150px;", :width=>"300px;"%>
+		</div>
+		<div class="col-xs-offset-1 col-xs-11 col-sm-6">
+			<h1 class=""><a href="http://jetapp.herokuapp.com", target="_blank">JetPack</a></h1>
+			<p>It is my belief that everyone has an idea tucked away in their head. JetPack is a webapp to help people get their ideas down in an attempt to enable collaboration.</p>
+			<%= image_tag "rails.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<%= image_tag "bootstrap.png", :height=>"50px;", :width=>"100px;"%>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<div class="col-xs-offset-1 col-xs-11 col-sm-6">
+			<h1 class=""><a href="http://gearinup.meteor.com", target="_blank">GearInUp</a></h1>
+			<p>After many of my friends asked me to borrow my GoPro camera for a weekend, I decided to invest a little money and rent them out around the TAMU campus!</p>
+			<%= image_tag "meteor.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<%= image_tag "angular.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<%= image_tag "bootstrap.png", :height=>"50px;", :width=>"100px;"%>
+		</div>
+		<div class="col-xs-offset-1 col-xs-11 col-sm-3 mobileHide">
+			<%= image_tag "GearInUpLogo_Black.png", :class=>"projectLogo", :height=>"150px;", :width=>"150px;"%>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<div class="col-xs-offset-1 col-xs-11 col-sm-3 mobileHide">
+			<%= image_tag "MolotovCocktail_iPhone.png", :class=>"projectLogo img-responsive", :height=>"150px;", :width=>"300px;"%>
+		</div>
+		<div class="col-xs-offset-1 col-xs-11 col-sm-6">
+			<h1 class=""><a href="https://github.com/wvance/MolotovCocktail", target="_blank">Molotov Cocktail</a></h1>
+			<p>An iOS game developed for fun! The purpose is to throw Molotov Cocktails at incoming fire icons.</p>
+			<%= image_tag "ios.png", :class=>"", :height=>"50px;", :width=>"50px;"%>
+			<%= image_tag "sprite.svg", :height=>"50px;", :width=>"50px;"%>
 		</div>
 	</div>
 </div>
