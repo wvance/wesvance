@@ -62,3 +62,8 @@ $(".welcome.index").ready ->
 	featureLayer.on 'click', (e) ->
 		map.panTo(e.layer.getLatLng());
 
+	featureLayer.on 'mouseover', (e) ->
+    e.layer.openPopup();
+
+	featureLayer.on 'mouseout', (e) ->
+	  e.layer.closePopup();
