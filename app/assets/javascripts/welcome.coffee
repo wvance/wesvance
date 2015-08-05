@@ -11,7 +11,7 @@
 
 $(".welcome.index").ready ->
 	L.mapbox.accessToken = 'pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ';
-	map = L.mapbox.map('map', 'wesvance.miaef27b', {
+	map = L.mapbox.map('map', 'wesvance.n3eemijg', {
   	# zoomControl: false
 	})
 
@@ -63,9 +63,11 @@ $(".welcome.index").ready ->
 		map.panTo(e.layer.getLatLng());
 		e.layer.openPopup();
 
+
 	featureLayer.on 'mouseover', (e) ->
     e.layer.openPopup();
 
 	# featureLayer.on 'click', (e) ->
 	#   e.layer.closePopup();
+
 
