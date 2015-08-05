@@ -20,7 +20,7 @@ maintain or invert existing value (light to dark) scale.
 @land:  #666666;
 
 @fill1: #222222;
-@fill2: #444444;
+@fill2: #000000;
 @fill3: #FFFFFF;
 @fill4: #111111;
 @fill5: #FFCC00;

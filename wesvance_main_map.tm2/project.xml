@@ -285,38 +285,38 @@
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([mapnik::geometry_type] = 2) and ([type] = 'runway')</Filter>
-    <LineSymbolizer stroke-width="6" stroke="#555555" />
+    <LineSymbolizer stroke-width="6" stroke="#333333" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([mapnik::geometry_type] = 2) and ([type] = 'runway')</Filter>
-    <LineSymbolizer stroke-width="4" stroke="#5e5e5e" />
+    <LineSymbolizer stroke-width="4" stroke="#4d4d4d" />
   </Rule>
   <Rule>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([mapnik::geometry_type] = 2) and ([type] = 'runway')</Filter>
-    <LineSymbolizer stroke="#5e5e5e" stroke-width="1" />
+    <LineSymbolizer stroke="#4d4d4d" stroke-width="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([mapnik::geometry_type] = 3) and ([type] != 'apron')</Filter>
-    <PolygonSymbolizer fill="#555555" />
+    <PolygonSymbolizer fill="#333333" />
   </Rule>
   <Rule>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([mapnik::geometry_type] = 3) and ([type] != 'apron')</Filter>
-    <PolygonSymbolizer fill="#5e5e5e" />
+    <PolygonSymbolizer fill="#4d4d4d" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([mapnik::geometry_type] = 2)</Filter>
-    <LineSymbolizer stroke-width="3" stroke="#555555" />
+    <LineSymbolizer stroke-width="3" stroke="#333333" />
   </Rule>
   <Rule>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([mapnik::geometry_type] = 2)</Filter>
-    <LineSymbolizer stroke="#5e5e5e" stroke-width="1" />
+    <LineSymbolizer stroke="#4d4d4d" stroke-width="1" />
   </Rule>
 </Style>
 <Layer name="aeroway"
@@ -330,11 +330,11 @@
 <Style name="building" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <PolygonSymbolizer fill="#555555" />
+    <PolygonSymbolizer fill="#333333" />
   </Rule>
   <Rule>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <PolygonSymbolizer fill="#5e5e5e" />
+    <PolygonSymbolizer fill="#4d4d4d" />
   </Rule>
 </Style>
 <Layer name="building"
