@@ -11,7 +11,7 @@
 
 $(".welcome.index").ready ->
 	L.mapbox.accessToken = 'pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ';
-	map = L.mapbox.map('map', 'wesvance.n3eemijg', {
+	map = L.mapbox.map('map', 'wesvance.n3ejgh0a', {
   	# zoomControl: false
 	})
 
