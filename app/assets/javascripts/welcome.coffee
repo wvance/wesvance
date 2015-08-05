@@ -13,7 +13,7 @@ $(".welcome.index").ready ->
 	L.mapbox.accessToken = 'pk.eyJ1Ijoid2VzdmFuY2UiLCJhIjoiV3RpaE1xNCJ9.t3DpzGpN43q23tRcKMzLqQ';
 	map = L.mapbox.map('map', 'wesvance.miaef27b', {
   	# zoomControl: false
-	}).setView([39.5, -98.35], 3)
+	})
 
 	# map.touchZoom.disable();
 	map.doubleClickZoom.disable();
@@ -23,16 +23,25 @@ $(".welcome.index").ready ->
 	# get JSON object
 	# on success, parse it and
 	# hand it over to MapBox for mapping
-	$.ajax
-	  dataType: 'text'
-	  url: '/welcome/index.json'
-	  success: (data) ->
-	    geojson = $.parseJSON(data)
-	    map.featureLayer.setGeoJSON(geojson)
+	# OLD WAY OF DOING IT? 
+
+	# $.ajax
+	#   dataType: 'text'
+	#   url: '/welcome/index.json'
+	#   success: (data) ->
+	#     geojson = $.parseJSON(data)
+	#     map.featureLayer.setGeoJSON(geojson)
+
+	featureLayer = L.mapbox.featureLayer()
+    .loadURL('/welcome/index.json')
+    .addTo(map);
+	
+	featureLayer.on 'ready', (e) ->
+		map.fitBounds(featureLayer.getBounds());
+
 
 	# add custom popups to each marker
-	
-	map.featureLayer.on 'layeradd', (e) ->
+	featureLayer.on 'layeradd', (e) ->
 	  marker = e.layer
 	  properties = marker.feature.properties
 
@@ -50,4 +59,6 @@ $(".welcome.index").ready ->
 	    minWidth: 200
 	    keepInView: true
 
+	featureLayer.on 'click', (e) ->
+		map.panTo(e.layer.getLatLng());
 
