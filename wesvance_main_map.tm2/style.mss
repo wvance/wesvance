@@ -16,10 +16,10 @@ maintain or invert existing value (light to dark) scale.
 */
 
 // Color palette //
-@road:  #333333;
-@land:  #555555;
+@road:  #444444;
+@land:  #666666;
 
-@fill1: #696969;
+@fill1: #222222;
 @fill2: #444444;
 @fill3: #FFFFFF;
 @fill4: #111111;
