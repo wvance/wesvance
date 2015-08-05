@@ -61,9 +61,11 @@ $(".welcome.index").ready ->
 
 	featureLayer.on 'click', (e) ->
 		map.panTo(e.layer.getLatLng());
+		e.layer.openPopup();
 
 	featureLayer.on 'mouseover', (e) ->
     e.layer.openPopup();
 
-	featureLayer.on 'click', (e) ->
-	  e.layer.closePopup();
+	# featureLayer.on 'click', (e) ->
+	#   e.layer.closePopup();
+
