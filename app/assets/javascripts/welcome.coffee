@@ -49,7 +49,7 @@ $(".welcome.index").ready ->
 	  popupContent =  '<a href = "/posts/' + properties.id + '">' + 
 		  								'<div class="popup">' +
 		                    '<h3>' + properties.name + '</h3>' +
-		                    '<p>'  + properties.address + '</p>' +
+		                    '<p>'  + properties.body.substring(0,125) + "..." + '</p>' +
 		                  '</div>' +
 	                  '</a>'
 
@@ -65,5 +65,5 @@ $(".welcome.index").ready ->
 	featureLayer.on 'mouseover', (e) ->
     e.layer.openPopup();
 
-	featureLayer.on 'mouseout', (e) ->
+	featureLayer.on 'click', (e) ->
 	  e.layer.closePopup();
