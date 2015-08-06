@@ -6,7 +6,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  process :quality => 50
+  process :quality => 33
 
   version :compressed do
     process :quality => 33
