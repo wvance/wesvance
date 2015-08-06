@@ -39,12 +39,14 @@
 			<div class="adminBar right">
 		  	<h4>
 		  		<%= link_to(:controller => "posts", :action => "new" ) do%>
-						New
-					<%end%> ❖
+						<i class="fa fa-pencil-square-o"></i>
+					<%end%> 
 					<%= link_to(:controller => "posts", :action => "index" ) do%>
-						All Posts
-					<%end%> ❖
-
+						<i class="fa fa-file-o"></i>
+					<%end%> 
+					<%= link_to(:controller => "post_attachments", :action => "new" ) do%>
+						<i class="fa fa-picture-o"></i>
+					<%end%> 
 		  		<%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
 		  	</h4>
 		  </div>
