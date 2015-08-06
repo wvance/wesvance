@@ -5,8 +5,8 @@ gem "font-awesome-rails"
 gem "devise"
 gem 'jquery-turbolinks'             # FIXES BUGS FOR JQUERY & RAILS
 gem 'redcarpet'											# USED FOR MARKDOWN INTERPRETATION
-gem 'paperclip'
-gem 'aws-sdk'
+
+gem "fog-aws"
 
 gem 'carrierwave'
 gem 'mini_magick'
