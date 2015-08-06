@@ -5,22 +5,24 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-
     @posts = Post.all.order('posts.date DESC').page(params[:page]).per(10)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post_attachments = @post.post_attachments.all
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @post_attachment = @post.post_attachments.build
   end
 
   # GET /posts/1/edit
   def edit
+    @post_attachments = @post.post_attachments.all
   end
 
   # POST /posts
@@ -47,6 +49,11 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        if params[:post_attachments] != nil
+          params[:post_attachments]['image'].each do |a|
+            @post_attachment = @post.post_attachments.create!(:image => a)
+          end
+        end
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, address: @post }
       else
@@ -88,6 +95,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :author, :body, :is_active, :date, :time, :is_comments, :rating, :ip, :address, :longitude, :latitude)
+      params.require(:post).permit(:title, :author, :body, :is_active, :date, :time, :is_comments, :rating, :ip, :address, :longitude, :latitude, :image, :post_attachments)
     end
 end

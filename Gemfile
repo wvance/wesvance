@@ -8,6 +8,8 @@ gem 'redcarpet'											# USED FOR MARKDOWN INTERPRETATION
 gem 'paperclip'
 gem 'aws-sdk'
 
+gem 'carrierwave'
+
 # gem 'gravtastic'                  # ADDED GRAVATAR: PROFILE PICTURE
 gem 'kaminari'                      # PAGINATION GEM
 gem 'geocoder' 											# IP TO LOCATION

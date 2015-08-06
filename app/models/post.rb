@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+	has_many :post_attachments
+	accepts_nested_attributes_for :post_attachments
+	
 	geocoded_by :ip, :latitude => :latitude, :longitude => :longitude	
 	reverse_geocoded_by :latitude, :longitude do |obj,results|
 	  if geo = results.first
