@@ -9,6 +9,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 
 gem 'carrierwave'
+gem 'mini_magick'
 
 # gem 'gravtastic'                  # ADDED GRAVATAR: PROFILE PICTURE
 gem 'kaminari'                      # PAGINATION GEM

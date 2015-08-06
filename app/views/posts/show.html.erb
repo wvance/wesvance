@@ -32,9 +32,9 @@
       <% if @post_attachments.present? %>
         <% @post_attachments.each do |p| %>
           <div class="col-xs-4 col-md-4">
-            <a href="#" class="thumbnail">
-              <%= image_tag(p.image_url, :class=>"img-responsive")%>
-            </a>
+            <%= link_to p.image_url, :class=> "thumbnail" do%>
+              <%= image_tag(p.image_url(:compressed), :class=>"img-responsive") if p.image? %>
+            <%end%>
           </div>
         <%end%>
       <%end%>
