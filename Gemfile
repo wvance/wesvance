@@ -6,9 +6,11 @@ gem "devise"
 gem 'jquery-turbolinks'             # FIXES BUGS FOR JQUERY & RAILS
 gem 'redcarpet'											# USED FOR MARKDOWN INTERPRETATION
 
+gem "figaro"
 gem "fog-aws"
 
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
 gem 'mini_magick'
 
 # gem 'gravtastic'                  # ADDED GRAVATAR: PROFILE PICTURE
