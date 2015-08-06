@@ -20,7 +20,6 @@
               <%= f.text_field :title, class: "form-control postTitle", placeholder:"Title"%>
               <%= f.text_field :author, class: "form-control childElement", placeholder:"Author" %>
               <%= f.text_field :address, class: "form-control childElement", placeholder:"Address" %>
-
             </div>
           </div>
           <div class="col-sm-4">
@@ -29,12 +28,16 @@
             <%= f.number_field :rating, class: "form-control" %>
           </div>
         </div>
+        <hr>
         <div class="row">
-          <div class="col-xs-12 form-group">
-            <hr>
+          <div class="col-xs-10 form-group">
             <div class="field">
               <%= f.text_area :body, class: "form-control autoGrowText", rows: "10", placeholder:"Insert post body here in HTML"%>
             </div>
+          </div>
+          <div class="col-xs-2">
+            <%= image_tag(@post.image_url, :width => 100) if @post.image.present? %>
+            <%= f.file_field :image %>
           </div>
         </div>
         <div class="row">
@@ -46,7 +49,7 @@
               Comments
               <%= f.check_box :has_comments %>
             </div>
-            
+          
             <div class="btn-group pull-right" role="group" aria-label="...">
               <%= link_to 'Back', posts_path , :class=>"btn btn-default"%>
               <%= f.submit "Submit", class: "btn btn-default"%>

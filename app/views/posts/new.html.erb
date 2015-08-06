@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for @post, :html => {:multipart => true} do |f| %>
 	<%- unless @lat_lng %>
 		<script>
 		  getGeoLocation();
@@ -33,6 +33,7 @@
 			      <div class="field pull-left">
 			        Active
 			        <%= f.check_box :is_active %>
+			        <%= f.file_field :image %>
 			      </div>
 			      
 			      <div class="btn-group pull-right" role="group" aria-label="...">

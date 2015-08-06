@@ -200,3 +200,8 @@ input[type="text"].postTitle{
 .projectLogo{
 	margin-top: 25px;
 }
+.postImage{
+	display: block;
+  width: 100% !important;
+  height: auto !important;
+}

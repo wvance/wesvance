@@ -14,6 +14,7 @@
           <th>IP</th>
           <th>Latitude</th>
           <th>Longitude</th>
+          <th>Image</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -31,6 +32,7 @@
             <td><%= post.ip %></td>
             <td><%= truncate post.latitude, length: 10%></td>
             <td><%= truncate post.longitude, length: 10%></td>
+            <td><%= post.image %></td>
             <td><%= link_to 'Show', post, :class=> "btn btn-default"%></td>
             <td><%= link_to 'Edit', edit_post_path(post), :class=> "btn btn-default" %></td>
             <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-danger" %></td>

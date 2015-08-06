@@ -11,6 +11,6 @@ class Post < ActiveRecord::Base
 	    obj.postal = geo.postal_code
 	  end
 	end
-
+	mount_uploader :image, ImageUploader
 	after_validation :geocode, :reverse_geocode
 end
