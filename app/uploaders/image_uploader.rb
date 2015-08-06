@@ -7,11 +7,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   process :quality => 33
-
-  version :compressed do
-    process :quality => 33
-  end
-
   
   # Choose what kind of storage to use for this uploader:
   # storage :file
