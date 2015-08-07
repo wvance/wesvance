@@ -47,6 +47,9 @@
 					<%= link_to(:controller => "post_attachments", :action => "new" ) do%>
 						<i class="fa fa-picture-o fa-2x icon"></i>
 					<%end%> 
+					<%= link_to(createTweet_path, :method => :post) do%>
+						<i class="fa fa-retweet fa-2x icon"></i>
+					<%end%>
 		  		<%= link_to(destroy_admin_session_path, :method => :delete) do%>
 		  			<i class="fa fa-user-times fa-2x icon"></i>
 		  		<%end%>
@@ -63,7 +66,7 @@
 		</div>
 	</div>
 </div>
-	
+
 <hr>
 
 <div id = "projects">
