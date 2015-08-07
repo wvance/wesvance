@@ -1,5 +1,6 @@
 class PostAttachmentsController < ApplicationController
-  before_action :set_post_attachment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only:[:index, :new, :edit, :create, :update, :destroy]
+  before_action :authenticate_admin!, only:[:new, :edit, :create, :update, :destroy]
 
   # GET /post_attachments
   # GET /post_attachments.json
