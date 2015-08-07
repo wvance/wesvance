@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tweets
+
   resources :post_attachments
 
   devise_for :admins
