@@ -9,6 +9,8 @@ gem 'redcarpet'											# USED FOR MARKDOWN INTERPRETATION
 gem "figaro"
 gem "fog-aws"
 
+gem 'twitter'
+
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'mini_magick'

@@ -1,8 +1,13 @@
 class WelcomeController < ApplicationController
+	include TwitterHelper
+
   def index
+
+  	@tweets = user_timeline(1)
+  	puts @tweets.to_yaml
+
   	@posts = Post.all.order('posts.date DESC').page(params[:page]).per(6)
   	@post = Post.new(:is_active => true)
-
 
   	# THIS IS FOR THE DISPLAY MAP
 	  @allPosts = Post.all
