@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20150807180644) do
     t.integer  "rating"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "image"
   end
 
   create_table "tweets", force: :cascade do |t|
@@ -69,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150807180644) do
     t.string   "user"
     t.string   "image"
     t.string   "location"
+    t.string   "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

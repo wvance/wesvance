@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'welcome/index', to: 'welcome#index', :as => :index
   root 'welcome#index'
 
+  post 'tweets/create', to: 'tweets#create', :as => :createTweet
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

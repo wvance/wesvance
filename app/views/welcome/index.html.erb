@@ -47,6 +47,9 @@
 					<%= link_to(:controller => "post_attachments", :action => "new" ) do%>
 						<i class="fa fa-picture-o fa-2x icon"></i>
 					<%end%> 
+					<%= link_to(createTweet_path, :method => :post) do%>
+						<i class="fa fa-retweet fa-2x icon"></i>
+					<%end%>
 		  		<%= link_to(destroy_admin_session_path, :method => :delete) do%>
 		  			<i class="fa fa-user-times fa-2x icon"></i>
 		  		<%end%>
@@ -63,12 +66,7 @@
 		</div>
 	</div>
 </div>
-	<% if @tweets.count > 0 %>
-		<% @tweets.each do |tweet|%>
-			<h3><%= tweet.text %></h3>
-			<h4><%= image_tag(tweet.media[0]["media_url"], :class=>"img-responsive")%></h4>
-		<%end%>
-	<%end%>
+
 <hr>
 
 <div id = "projects">

@@ -5,7 +5,8 @@ class CreateTweets < ActiveRecord::Migration
       t.string :user
       t.string :image
       t.string :location
-
+      t.string :tweet_id
+      
       t.timestamps null: false
     end
   end

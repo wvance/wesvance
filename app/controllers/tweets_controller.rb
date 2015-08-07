@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   before_action :authenticate_admin!, only:[:index, :new, :edit, :create, :update, :destroy]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+
   include TwitterHelper
 
   # GET /tweets
@@ -26,9 +27,10 @@ class TweetsController < ApplicationController
   # POST /tweets
   # POST /tweets.json
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = Tweet.new
     timeline = user_timeline(1)[0]
 
+    @tweet.tweet_id = timeline.id
     @tweet.body = timeline.text
     @tweet.user = timeline.user.screen_name
     @tweet.image = timeline.media[0]["media_url"]
