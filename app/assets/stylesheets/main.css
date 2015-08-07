@@ -200,3 +200,7 @@ input[type="text"].postTitle{
 .projectLogo{
 	margin-top: 25px;
 }
+.icon{
+	padding-left: 2.5px;
+	padding-right: 2.5px;
+}

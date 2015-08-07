@@ -3,7 +3,7 @@
 	<div id="navBar" class="col-xs-12 col-sm-5 col-md-4 col-lg-3 center">
 		<div class="sideBarSection">
 			<div class="profile">
-				<div class="profileName">
+				<div class="profileName avatar">
 					<!-- USER PROFILE PICTURE -->
 					<%= image_tag "p.jpg", :class=>"profileImg img-circle"%>
 					<!-- USER FIRST & LAST NAME -->
@@ -39,15 +39,17 @@
 			<div class="adminBar right">
 		  	<h4>
 		  		<%= link_to(:controller => "posts", :action => "new" ) do%>
-						<i class="fa fa-pencil-square-o"></i>
+						<i class="fa fa-pencil-square-o fa-2x icon"></i>
 					<%end%> 
 					<%= link_to(:controller => "posts", :action => "index" ) do%>
-						<i class="fa fa-file-o"></i>
+						<i class="fa fa-file-o fa-2x icon"></i>
 					<%end%> 
 					<%= link_to(:controller => "post_attachments", :action => "new" ) do%>
-						<i class="fa fa-picture-o"></i>
+						<i class="fa fa-picture-o fa-2x icon"></i>
 					<%end%> 
-		  		<%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+		  		<%= link_to(destroy_admin_session_path, :method => :delete) do%>
+		  			<i class="fa fa-user-times fa-2x icon"></i>
+		  		<%end%>
 		  	</h4>
 		  </div>
 		<% end %>
