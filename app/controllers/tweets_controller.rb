@@ -35,8 +35,8 @@ class TweetsController < ApplicationController
     @tweet.user = timeline.user.screen_name
     if timeline.media[0].present?
       @tweet.image = timeline.media[0]["media_url"]
-      @tweet.url = timeline.media[0].url
     end
+    @tweet.url = timeline.url
     if timeline.place.full_name.present?
       @tweet.location = timeline.place.full_name
     end
