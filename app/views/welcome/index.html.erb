@@ -131,37 +131,6 @@
 	</div>
 </div>
 
-<div class="row">
-	<!-- BLOG -->
-	<div class="col-xs-8 col-xs-offset-2">
-		<% if @posts.count > 0 %>
-			<% @posts.each do |post| %>
-				<div class="links" id="<%= post.id %>">
-					<% if post.is_active %>
-						<hr>
-						<div id="blog" class="blogSection">
-							<div class="blogTitle links">
-								<%= link_to controller: "posts", action: "show", id: post do %>
-									<h1><%= post.title.capitalize %></h1>
-								<%end%>
-							</div>
-							<div class="blogTags">
-								<h6 class="childElement"><%= formatDate(post.date) %> 
-									<% if post.city.present? || post.state.present?%> 
-		              	in <%= post.city%>, <%= post.state%>
-		            	<%end%>
-	            	</h6>
-							</div>
-							<div class="postContentPreview">
-								<%= truncate(markdown(post.body).html_safe, :length => 400, :omission => "" , :escape => false,separator: /\s/, omission: '...')%>
-							</div>
-						</div>
-					<%end%>
-				</div>
-			<%end%>
-		<%end%>
-	</div>
-</div>
 
 <div class="row">
 	<!-- TWEETS -->
@@ -199,6 +168,38 @@
 							<%end%>
 						</div>
 					</div>
+			<%end%>
+		<%end%>
+	</div>
+</div>
+
+<div class="row">
+	<!-- BLOG -->
+	<div class="col-xs-8 col-xs-offset-2">
+		<% if @posts.count > 0 %>
+			<% @posts.each do |post| %>
+				<div class="links" id="<%= post.id %>">
+					<% if post.is_active %>
+						<hr>
+						<div id="blog" class="blogSection">
+							<div class="blogTitle links">
+								<%= link_to controller: "posts", action: "show", id: post do %>
+									<h1><%= post.title.capitalize %></h1>
+								<%end%>
+							</div>
+							<div class="blogTags">
+								<h6 class="childElement"><%= formatDate(post.date) %> 
+									<% if post.city.present? || post.state.present?%> 
+		              	in <%= post.city%>, <%= post.state%>
+		            	<%end%>
+	            	</h6>
+							</div>
+							<div class="postContentPreview">
+								<%= truncate(markdown(post.body).html_safe, :length => 400, :omission => "" , :escape => false,separator: /\s/, omission: '...')%>
+							</div>
+						</div>
+					<%end%>
+				</div>
 			<%end%>
 		<%end%>
 		<div class="pagFooter">

@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
   def index
   	@posts = Post.all.order('posts.date DESC').page(params[:page]).per(6)
-  	@tweets = Tweet.all
+  	@tweets = Tweet.all.page(params[:page]).per(1)
 
   	@post = Post.new(:is_active => true)
 
@@ -54,7 +54,7 @@ class WelcomeController < ApplicationController
 			      address: if (tweet.location?) 
 			      	tweet.location
 			      end,
-			      :'marker-color' => '#FFCC00',
+			      :'marker-color' => '#4099FF',
 			      :'marker-size' => 'small'
 			    }
 			  }
