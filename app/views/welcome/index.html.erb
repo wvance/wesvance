@@ -176,7 +176,11 @@
 									<%end%>
 								</div>
 								<div class="blogTags">
-									<h6 class="childElement"><%= formatDate(tweet.date) %> 
+									<h6 class="childElement">
+										<% if tweet.date.present?%> 
+											<%= formatDate(tweet.date) %> 
+										<%end%>
+										
 										<% if tweet.location.present?%> 
 			              	in <%= tweet.location%>
 			            	<%end%>
