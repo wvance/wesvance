@@ -47,7 +47,7 @@ class WelcomeController < ApplicationController
 			    },
 			    properties: {
 			    	name: "Tweet",
-			    	link: tweet.url.to_s,
+			    	link: tweet.url,
 			      body: tweet.body, 
 			      date: tweet.date,
 			      id: tweet.tweet_id,
