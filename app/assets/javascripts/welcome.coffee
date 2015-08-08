@@ -37,7 +37,7 @@ $(".welcome.index").ready ->
     .addTo(map);
 	
 	featureLayer.on 'ready', (e) ->
-		map.fitBounds(featureLayer.getBounds());
+		map.fitBounds(featureLayer.getBounds(), {padding: [50,50]});
 
 
 	# add custom popups to each marker
@@ -50,7 +50,7 @@ $(".welcome.index").ready ->
 		                    '<h3>' + properties.name + '</h3>' +
 		                    '<p>'  + properties.body.substring(0,125) + "..." + '</p>' +
 		                  '</div>'
-		                  
+
 	  # http://leafletjs.com/reference.html#popup
 	  marker.bindPopup popupContent,
 	    closeButton: false
