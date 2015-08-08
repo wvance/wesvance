@@ -2,8 +2,6 @@ class WelcomeController < ApplicationController
 	include TwitterHelper
 
   def index
-  	@tweets = user_timeline(1)
-  	puts @tweets.to_yaml
   	@posts = Post.all.order('posts.date DESC').page(params[:page]).per(6)
   	@tweets = Tweet.all
 
@@ -13,6 +11,7 @@ class WelcomeController < ApplicationController
 	  @allPosts = Post.all
 		@geojson = Array.new
 
+		# PUT POSTS ON MAP
 		@allPosts.each do |post|
 			if (post.longitude != '0.0' || post.latitude != '0.0') && (post.longitude != '' || post.latitude != '')
 			  @geojson << {
@@ -24,6 +23,7 @@ class WelcomeController < ApplicationController
 			    properties: {
 			      name: post.title,
 			      body: post.body, 
+			      link: "/posts/" + post.id.to_s,
 			      date: post.date, 
 			      id: post.id,
 			      address: if (post.city.present? && post.state.present?) 
@@ -35,6 +35,32 @@ class WelcomeController < ApplicationController
 			  }
 			end
 		end
+
+		# PUT TWEETS ON MAP
+		@tweets.each do |tweet|
+			if (tweet.Longitude != '0.0' || tweet.Latitude != '0.0') && (tweet.Longitude != '' || tweet.Latitude != '')
+			  @geojson << {
+			    type: 'Feature',
+			    geometry: {
+			      type: 'Point',
+			      coordinates: [tweet.Longitude, tweet.Latitude]
+			    },
+			    properties: {
+			    	name: "Tweet",
+			    	link: tweet.url,
+			      body: tweet.body, 
+			      date: tweet.date,
+			      id: tweet.tweet_id,
+			      address: if (tweet.location?) 
+			      	tweet.location
+			      end,
+			      :'marker-color' => '#FFCC00',
+			      :'marker-size' => 'small'
+			    }
+			  }
+			end
+		end
+
 		respond_to do |format|
 		  format.html
 		  format.json { render json: @geojson }  # respond with the created JSON object

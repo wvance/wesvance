@@ -10,7 +10,10 @@
           <th>Body</th>
           <th>User</th>
           <th>Image</th>
+          <th>URL</th>
           <th>Location</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -21,7 +24,10 @@
             <td><%= tweet.body %></td>
             <td><%= tweet.user %></td>
             <td><%= tweet.image %></td>
+            <td><%= tweet.url %></td>
             <td><%= tweet.location %></td>
+            <td><%= tweet.Latitude %></td>
+            <td><%= tweet.Longitude %></td>
             <td><%= link_to 'Show', tweet %></td>
             <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
             <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

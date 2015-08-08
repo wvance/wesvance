@@ -36,6 +36,7 @@ class TweetsController < ApplicationController
     @tweet.image = timeline.media[0]["media_url"]
     @tweet.location = timeline.place.full_name
     @tweet.url = timeline.media[0].url
+    @tweet.date = timeline.created_at
 
     respond_to do |format|
       if @tweet.save

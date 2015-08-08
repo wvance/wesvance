@@ -11,7 +11,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :state
       t.string :country
       t.string :postal
-
+      
       t.string :ip
       t.string :latitude
       t.string :longitude
