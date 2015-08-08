@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
 			    properties: {
 			      name: post.title,
 			      body: post.body, 
-			      link: "/posts/" + post.id.to_s,
+			      link: "http://www.wesvance.com/posts/" + post.id.to_s,
 			      date: post.date, 
 			      id: post.id,
 			      address: if (post.city.present? && post.state.present?) 
