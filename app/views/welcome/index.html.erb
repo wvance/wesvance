@@ -167,12 +167,23 @@
 		<% if @tweets.count > 0 %>
 			<% @tweets.each do |tweet| %>
 					<hr>
-					<div id="blog" class="blogSection">
-						<div class="blogTitle">
-							<h1>@<%= tweet.user %> in <%=tweet.location%></h1>
+					<div class="row">
+						<div class="col-xs-8">
+							<div id="blog" class="blogSection">
+								<div class="blogTitle links">
+									<%= link_to tweet.url do%>
+										<h1>@<%= tweet.user %> in <%=tweet.location%></h1>
+									<%end%>
+								</div>
+								<div class="postContentPreview">
+									<%= tweet.body %>
+								</div>
+							</div>
 						</div>
-						<div class="postContentPreview">
-							<%= tweet.body %>
+						<div class="col-xs-4">
+							<%= link_to tweet.image do%>
+								<%= image_tag tweet.image, :width=>"200px", :height=>"200px;", :class=>"img-responsive thumbnail" %>
+							<%end%>
 						</div>
 					</div>
 			<%end%>
