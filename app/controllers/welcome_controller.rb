@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
 			    properties: {
 			      name: post.title,
 			      body: post.body, 
-			      link: "http://www.wesvance.com/posts/" + post.id.to_s,
+			      link: "/posts/" + post.id.to_s,
 			      date: post.date, 
 			      id: post.id,
 			      address: if (post.city.present? && post.state.present?) 
@@ -47,7 +47,7 @@ class WelcomeController < ApplicationController
 			    },
 			    properties: {
 			    	name: "Tweet",
-			    	link: tweet.url,
+			    	link: tweet.url.to_s,
 			      body: tweet.body, 
 			      date: tweet.date,
 			      id: tweet.tweet_id,
