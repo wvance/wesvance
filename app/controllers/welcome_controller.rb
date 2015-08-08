@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
   def index
   	@posts = Post.all.order('posts.date DESC').page(params[:page]).per(6)
-  	@tweets = Tweet.all.page(params[:page]).per(1)
+  	@tweets = Tweet.all.page(params[:page]).per(4)
 
   	@post = Post.new(:is_active => true)
 

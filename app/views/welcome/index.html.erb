@@ -131,48 +131,6 @@
 	</div>
 </div>
 
-
-<div class="row">
-	<!-- TWEETS -->
-	<div class="col-xs-8 col-xs-offset-2">
-		<% if @tweets.count > 0 %>
-			<% @tweets.each do |tweet| %>
-					<hr>
-					<div class="row links" id="<%= tweet.tweet_id %>">
-						<div class="col-xs-12 col-sm-8">
-							<div id="blog" class="blogSection">
-								<div class="blogTitle links">
-									<%= link_to(tweet.url, :target => "_blank") do%>
-										<h1>Tweet by @<%= tweet.user %></h1>
-									<%end%>
-								</div>
-								<div class="blogTags">
-									<h6 class="childElement">
-										<% if tweet.date.present?%> 
-											<%= formatDate(tweet.date) %> 
-										<%end%>
-										<% if tweet.location.present?%> 
-			              	in <%= tweet.location%>
-			            	<%end%>
-		            	</h6>
-								</div>
-								<div class="postContentPreview">
-									<p><%= tweet.body %></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4 mobileHide">
-							<%= link_to tweet.image do%>
-								<br>
-								<%= image_tag tweet.image, :width=>"200px", :height=>"200px;", :class=>"img-responsive center thumbnail", :target => "_blank" %>
-							<%end%>
-						</div>
-					</div>
-			<%end%>
-		<%end%>
-	</div>
-</div>
-
 <div class="row">
 	<!-- BLOG -->
 	<div class="col-xs-8 col-xs-offset-2">
@@ -200,6 +158,52 @@
 						</div>
 					<%end%>
 				</div>
+			<%end%>
+		<%end%>
+		<div class="pagFooter">
+			<h4><%= paginate @posts %></h4>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<!-- TWEETS -->
+	<div class="col-xs-8 col-xs-offset-2">
+		<% if @tweets.count > 0 %>
+			<% @tweets.each do |tweet| %>
+					<hr>
+					<div class="row links" id="<%= tweet.tweet_id %>">
+						<div class="col-xs-12 <% if tweet.image.present? %>col-sm-8<%end%>">
+							<div id="blog" class="blogSection">
+								<div class="blogTitle links">
+									<%= link_to(tweet.url, :target => "_blank") do%>
+										<h1>Tweet by @<%= tweet.user %></h1>
+									<%end%>
+								</div>
+								<div class="blogTags">
+									<h6 class="childElement">
+										<% if tweet.date.present?%> 
+											<%= formatDate(tweet.date) %> 
+										<%end%>
+										<% if tweet.location.present?%> 
+			              	in <%= tweet.location%>
+			            	<%end%>
+		            	</h6>
+								</div>
+								<div class="postContentPreview">
+									<p><%= tweet.body %></p>
+								</div>
+							</div>
+						</div>
+						<% if tweet.image.present? %>
+							<div class="col-xs-12 col-sm-4 mobileHide">
+								<%= link_to tweet.image do%>
+									<br>
+									<%= image_tag tweet.image, :width=>"200px", :height=>"200px;", :class=>"img-responsive center thumbnail", :target => "_blank" %>
+								<%end%>
+							</div>
+						<%end%>
+					</div>
 			<%end%>
 		<%end%>
 		<div class="pagFooter">
