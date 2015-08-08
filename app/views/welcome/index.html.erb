@@ -173,6 +173,14 @@
 			<% @tweets.each do |tweet| %>
 					<hr>
 					<div class="row links" id="<%= tweet.tweet_id %>">
+						<% if tweet.image.present? %>
+							<div class="col-xs-12 col-sm-3 center">
+								<%= link_to tweet.image do%>
+									<br>
+									<%= image_tag tweet.image, :width=>"200px", :height=>"200px;", :class=>"img-responsive center thumbnail", :target => "_blank" %>
+								<%end%>
+							</div>
+						<%end%>
 						<div class="col-xs-12 <% if tweet.image.present? %>col-sm-9<%end%>">
 							<div id="blog" class="blogSection">
 								<div class="blogTitle links">
@@ -192,14 +200,6 @@
 								</div>
 							</div>
 						</div>
-						<% if tweet.image.present? %>
-							<div class="col-xs-12 col-sm-3 mobileHide">
-								<%= link_to tweet.image do%>
-									<br>
-									<%= image_tag tweet.image, :width=>"200px", :height=>"200px;", :class=>"img-responsive center thumbnail", :target => "_blank" %>
-								<%end%>
-							</div>
-						<%end%>
 					</div>
 			<%end%>
 		<%end%>
