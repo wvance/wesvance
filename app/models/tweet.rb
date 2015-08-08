@@ -1,9 +1,10 @@
 class Tweet < ActiveRecord::Base
-	  validates :tweet_id, uniqueness: true
+	belongs_to :admins
 
-	  geocoded_by :location,
-		  :latitude => :Latitude, :longitude => :Longitude
+  validates :tweet_id, uniqueness: true
 
-		after_validation :geocode
+  geocoded_by :location,
+	  :latitude => :Latitude, :longitude => :Longitude
 
+	after_validation :geocode
 end

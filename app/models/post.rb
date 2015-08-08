@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 	has_many :post_attachments
+	belongs_to :admins
+	
 	accepts_nested_attributes_for :post_attachments
 	
 	geocoded_by :ip, :latitude => :latitude, :longitude => :longitude	
