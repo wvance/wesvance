@@ -33,9 +33,13 @@ class TweetsController < ApplicationController
     @tweet.tweet_id = timeline.id
     @tweet.body = timeline.text
     @tweet.user = timeline.user.screen_name
-    @tweet.image = timeline.media[0]["media_url"]
-    @tweet.location = timeline.place.full_name
-    @tweet.url = timeline.media[0].url
+    if timeline.media[0].present?
+      @tweet.image = timeline.media[0]["media_url"]
+      @tweet.url = timeline.media[0].url
+    end
+    if timeline.place.full_name.present?
+      @tweet.location = timeline.place.full_name
+    end
     @tweet.date = timeline.created_at
 
     respond_to do |format|
