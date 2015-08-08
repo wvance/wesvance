@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order('posts.date DESC').page(params[:page]).per(20)
+    @tweets = Tweets.all
   end
 
   # GET /posts/1

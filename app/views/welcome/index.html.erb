@@ -169,4 +169,28 @@
 		</div>
 	</div>
 </div>
+
+<div class="row">
+	<!-- BLOG -->
+	<div class="col-xs-8 col-xs-offset-2">
+		<% if @tweets.count > 0 %>
+			<% @tweets.each do |tweet| %>
+					<hr>
+					<div id="blog" class="blogSection">
+						<div class="blogTitle">
+							<h1>@<%= tweet.user %> in <%=tweet.location%></h1>
+						</div>
+						<div class="postContentPreview">
+							<%= tweet.body %>
+						</div>
+					</div>
+			<%end%>
+		<%end%>
+		<div class="pagFooter">
+			<h4><%= paginate @posts %></h4>
+			<!-- <%= page_entries_info @posts %> -->
+		</div>
+	</div>
+</div>
+
 <!-- <%= debug @geojson %> -->
