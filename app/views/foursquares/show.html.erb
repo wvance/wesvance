@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @foursquare.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @foursquare.user %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @foursquare.image %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @foursquare.location %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @foursquare.post_id %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @foursquare.url %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @foursquare.date %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @foursquare.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @foursquare.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_foursquare_path(@foursquare) %> |
+<%= link_to 'Back', foursquares_path %>

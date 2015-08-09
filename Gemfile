@@ -10,6 +10,7 @@ gem "figaro"
 gem "fog-aws"
 
 gem 'twitter'
+gem 'foursquare2'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 

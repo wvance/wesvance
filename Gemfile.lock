@@ -77,6 +77,8 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
     figaro (1.1.1)
       thor (~> 0.14)
     fog-aws (0.1.2)
@@ -100,9 +102,14 @@ GEM
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    foursquare2 (2.0.2)
+      faraday (~> 0.8)
+      faraday_middleware (>= 0.8)
+      hashie (>= 1.0, < 4.0.0)
     geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    hashie (3.4.2)
     http (0.6.4)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
@@ -242,6 +249,7 @@ DEPENDENCIES
   figaro
   fog-aws
   font-awesome-rails
+  foursquare2
   geocoder
   jbuilder (~> 2.0)
   jquery-rails

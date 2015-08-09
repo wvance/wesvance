@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :foursquares
+
   resources :tweets
 
   resources :post_attachments
