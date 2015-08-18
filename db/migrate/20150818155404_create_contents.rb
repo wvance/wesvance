@@ -1,17 +1,24 @@
-class CreatePosts < ActiveRecord::Migration
+class CreateContents < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
-      t.string :title
-      t.string :author
-      t.text :body
+    create_table :contents do |t|
 
+      t.string :title
+      t.integer :author
+      t.text :body
+      t.string :image
+
+      t.integer :external_id, :limit => 8
+      t.string :external_link
+      t.string :kind
+      t.string :rating
+
+      t.string :location
       t.string :address
-      t.string :street
       t.string :city
       t.string :state
       t.string :country
       t.string :postal
-      
+
       t.string :ip
       t.string :latitude
       t.string :longitude
@@ -19,10 +26,9 @@ class CreatePosts < ActiveRecord::Migration
       t.boolean :is_active
       t.boolean :has_comments
 
-      t.date :date
-      t.time :time
-      t.integer :rating
-      
+      t.datetime :created
+      t.datetime :updated
+
       t.timestamps null: false
     end
   end

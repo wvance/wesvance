@@ -33,16 +33,16 @@
 		<% if admin_signed_in?%>
 			<div class="adminBar right">
 		  	<h4>
-		  		<%= link_to(:controller => "posts", :action => "new" ) do%>
+		  		<%= link_to(:controller => "contents", :action => "new" ) do%>
 						<i class="fa fa-pencil-square-o fa-2x icon"></i>
 					<%end%> 
-					<%= link_to(:controller => "posts", :action => "index" ) do%>
+					<%= link_to(:controller => "contents", :action => "index" ) do%>
 						<i class="fa fa-file-o fa-2x icon"></i>
 					<%end%> 
-					<%= link_to(:controller => "post_attachments", :action => "new" ) do%>
+					<%= link_to(:controller => "content_attachments", :action => "new" ) do%>
 						<i class="fa fa-picture-o fa-2x icon"></i>
-					<%end%> 
-					<%= link_to(createTweet_path, :method => :post) do%>
+					<%end%>
+					<%= link_to(createContent_path(@content, content: {:kind => "twitter"}), :method => :post) do%>
 						<i class="fa fa-retweet fa-2x icon"></i>
 					<%end%>
 		  		<%= link_to(destroy_admin_session_path, :method => :delete) do%>
@@ -132,79 +132,60 @@
 </div>
 
 <div class="row">
-	<!-- BLOG -->
+	<!-- Content -->
 	<div class="col-xs-8 col-xs-offset-2">
-		<% if @posts.count > 0 %>
-			<% @posts.each do |post| %>
-				<div class="links" id="<%= post.id %>">
-					<% if post.is_active %>
-						<hr>
-						<div id="blog" class="blogSection">
-							<div class="blogTitle links">
-								<%= link_to controller: "posts", action: "show", id: post do %>
-									<h1><%= post.title.capitalize %></h1>
+		<% if @contents.count > 0 %>
+			<% @contents.each do |content| %>
+				<hr>
+				<div class="blogSection" id="blog">
+					<div class="row links" id="<%= content.id %>">
+						<div class="blogImage">
+							<% if content.image.present? %>
+								<div class="col-xs-12 col-sm-3 center">
+									<%= link_to content.image do%>
+										<br>
+										<%= image_tag content.image, :width=>"200px", :height=>"200px;", :class=>"img-responsive center thumbnail", :target => "_blank" %>
+									<%end%>
+								</div>
+							<%end%>
+						</div>
+						<div class="col-xs-12 <% if content.image.present? %>col-sm-9<%end%>">
+							<div class="blogTitle">
+								<%= link_to("/contents/"+content.id.to_s) do%>
+									<% if content.title.present? %>
+										<h1><%= content.title %></h1>
+									<%elsif content.kind.present? %>
+										<h1><%= content.kind.capitalize%>:</h1>
+									<%else%>
+										<h1>Content:</h1>
+									<%end%>
 								<%end%>
 							</div>
 							<div class="blogTags">
-								<h6 class="childElement"><%= formatDate(post.date) %> 
-									<% if post.city.present? || post.state.present?%> 
-		              	in <%= post.city%>, <%= post.state%>
+								<h6 class="childElement">
+									<% if content.created.present?%> 
+										<%= formatDate(content.created) %> 
+									<%end%>
+									
+									<% if content.location.present?%> 
+		              	at <%= content.location%>
+		              <%elsif content.city.present? || content.state.present?%>
+		              	at <%= content.city %> <%= content.state%>
 		            	<%end%>
 	            	</h6>
 							</div>
-							<div class="postContentPreview">
-								<%= truncate(markdown(post.body).html_safe, :length => 400, :omission => "" , :escape => false,separator: /\s/, omission: '...')%>
+							<div class="blogBody">
+								<% if content.body.present? %>
+									<p><%= content.body.truncate(500, separator: '\n', omission: '...')  %></p>
+								<%end%>
 							</div>
 						</div>
-					<%end%>
+					</div>
 				</div>
 			<%end%>
 		<%end%>
 		<div class="pagFooter">
-			<h4><%= paginate @posts %></h4>
-		</div>
-	</div>
-</div>
-
-<div class="row">
-	<!-- TWEETS -->
-	<div class="col-xs-8 col-xs-offset-2">
-		<% if @tweets.count > 0 %>
-			<% @tweets.each do |tweet| %>
-					<hr>
-					<div class="row links" id="<%= tweet.tweet_id %>">
-						<% if tweet.image.present? %>
-							<div class="col-xs-12 col-sm-3 center">
-								<%= link_to tweet.image do%>
-									<br>
-									<%= image_tag tweet.image, :width=>"200px", :height=>"200px;", :class=>"img-responsive center thumbnail", :target => "_blank" %>
-								<%end%>
-							</div>
-						<%end%>
-						<div class="col-xs-12 <% if tweet.image.present? %>col-sm-9<%end%>">
-							<div id="blog" class="blogSection">
-								<div class="blogTitle links">
-									<%= link_to(tweet.url, :target => "_blank") do%>
-										<h3>Tweet: <%= tweet.body %></h3>
-									<%end%>
-								</div>
-								<div class="blogTags">
-									<h6 class="childElement">
-										<% if tweet.date.present?%> 
-											<%= formatDate(tweet.date) %> 
-										<%end%>
-										<% if tweet.location.present?%> 
-			              	in <%= tweet.location%>
-			            	<%end%>
-		            	</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-			<%end%>
-		<%end%>
-		<div class="pagFooter">
-			<h4><%= paginate @posts %></h4>
+			<h4><%= paginate @contents %></h4>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,45 @@
+<!-- Title -->
+<div class="displayPost">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+      <div id="blog" class="blogSection">
+        <div class="blogTitle links">
+          <h1 class="inline postTitle"><span class="yellow"><%= @content.title %> </span></h1>
+          <% if admin_signed_in?%>
+            <h6 class="inline">            
+              <%= link_to 'All', contents_path %> |
+              <%= link_to 'Edit', edit_content_path(@content) %> | 
+              <%= link_to 'Destroy', @content, method: :delete, data: { confirm: 'Are you sure?' }%>
+            </h6>
+          <%end%>
+        </div>
+        <div class="blogTags">
+          <h5 class="childElement"><%= formatDate(@content.created) %> 
+            <% if @content.kind =="twitter" %>
+              at <%= @content.location %>
+            <%elsif @content.city.present? || @content.state.present?%> 
+              at <%= @content.city%>, <%= @content.state%>
+            <%end%>
+          </h5>
+        </div>
+        <div class="postContent">
+          <p class="postContent"><%= markdown(@content.body).html_safe %></p>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+      <% if @content_attachments.present? %>
+        <% @content_attachments.each do |p| %>
+          <div class="col-xs-4 col-md-4">
+            <%= link_to p.image, :class=> "thumbnail" do%>
+              <%= image_tag(p.image, :class=>"img-responsive") if p.image? %>
+            <%end%>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+</div>

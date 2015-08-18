@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
 	has_many :post_attachments
 	belongs_to :admins
+	belongs_to :contents
 	
 	accepts_nested_attributes_for :post_attachments
 	

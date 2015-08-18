@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808191105) do
+ActiveRecord::Schema.define(version: 20150818160158) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "firstName"
@@ -33,6 +33,40 @@ ActiveRecord::Schema.define(version: 20150808191105) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "content_attachments", force: :cascade do |t|
+    t.integer  "content_id"
+    t.string   "image"
+    t.datetime "created"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "author"
+    t.text     "body"
+    t.string   "image"
+    t.integer  "external_id",   limit: 8
+    t.string   "external_link"
+    t.string   "kind"
+    t.string   "rating"
+    t.string   "location"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "postal"
+    t.string   "ip"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.boolean  "is_active"
+    t.boolean  "has_comments"
+    t.datetime "created"
+    t.datetime "updated"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "post_attachments", force: :cascade do |t|
     t.integer  "post_id"

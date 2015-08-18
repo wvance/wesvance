@@ -43,16 +43,16 @@
 						<% if admin_signed_in?%>
 							<div class="adminBar right">
 						  	<h4>
-						  		<%= link_to(:controller => "posts", :action => "new" ) do%>
+						  		<%= link_to(:controller => "contents", :action => "new" ) do%>
 										<i class="fa fa-pencil-square-o fa-2x icon"></i>
 									<%end%> 
-									<%= link_to(:controller => "posts", :action => "index" ) do%>
+									<%= link_to(:controller => "contents", :action => "index" ) do%>
 										<i class="fa fa-file-o fa-2x icon"></i>
 									<%end%> 
-									<%= link_to(:controller => "post_attachments", :action => "new" ) do%>
+									<%= link_to(:controller => "content_attachments", :action => "new" ) do%>
 										<i class="fa fa-picture-o fa-2x icon"></i>
 									<%end%> 
-									<%= link_to(createTweet_path, :method => :post) do%>
+									<%= link_to(createContent_path(@content, content: {:kind => "twitter"}), :method => :post) do%>
 										<i class="fa fa-retweet fa-2x icon"></i>
 									<%end%>
 						  		<%= link_to(destroy_admin_session_path, :method => :delete) do%>
