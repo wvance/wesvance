@@ -176,7 +176,7 @@
 							</div>
 							<div class="blogBody">
 								<% if content.body.present? %>
-									<p><%= content.body.truncate(500, separator: '\n', omission: '...')  %></p>
+									<p><%= markdown(content.body.truncate(500, separator: '\n', omission: '...')).html_safe  %></p>
 								<%end%>
 							</div>
 						</div>
