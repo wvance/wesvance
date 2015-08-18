@@ -40,10 +40,16 @@
           <div class="col-xs-4 form-group">
             Kind
             <%= f.text_field :kind, class: "form-control"%>
+            Internal ID
+            <%= f.number_field :id, class: "form-control" %>
             External ID
             <%= f.number_field :external_id, class: "form-control" %>
             External Link
             <%= f.text_field :external_link, class: "form-control" %>
+            Latitude
+            <%= f.number_field :latitude, class: "form-control" %>
+            Longitude
+            <%= f.number_field :longitude, class: "form-control" %>
             Active
             <%= f.check_box :is_active %>
             <br>
