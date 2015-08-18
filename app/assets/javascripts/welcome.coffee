@@ -46,9 +46,11 @@ $(".welcome.index").ready ->
 	  properties = marker.feature.properties
 
 	  # create custom popup
-	  popupContent = 	'<div class="popup">' +
+	  popupContent = 	'<div class="popup">' + 
+	  								'<a href="' + properties.link + '">' + 
 		                    '<h3>' + properties.name + '</h3>' +
 		                    '<p>'  + properties.body.substring(0,125) + "..." + '</p>' +
+		                    '</a>' +
 		                  '</div>'
 
 	  # http://leafletjs.com/reference.html#popup
