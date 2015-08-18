@@ -40,6 +40,13 @@
           </div>
         <%end%>
       <%end%>
+      <% if @content.image.present? %>
+        <div class="col-xs-4 col-md-4">
+          <%= link_to @content.external_link, :class=> "thumbnail", :target => "_blank" do%>
+            <%= image_tag(@content.image, :class=>"img-responsive") if @content.image? %>
+          <%end%>
+        </div>
+      <%end%>
     </div>
   </div>
 </div>
