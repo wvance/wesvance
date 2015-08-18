@@ -204,3 +204,6 @@ input[type="text"].postTitle{
 	padding-left: 2.5px;
 	padding-right: 2.5px;
 }
+.blogPost{
+	margin-top: -20px;
+}
