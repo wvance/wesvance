@@ -13,27 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150818160158) do
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "fullName"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-
   create_table "content_attachments", force: :cascade do |t|
     t.integer  "content_id"
     t.string   "image"
@@ -68,47 +47,38 @@ ActiveRecord::Schema.define(version: 20150818160158) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "post_attachments", force: :cascade do |t|
-    t.integer  "post_id"
-    t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "author"
-    t.text     "body"
+  create_table "users", force: :cascade do |t|
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "fullName"
+    t.string   "userName"
+    t.string   "email",                  default: "", null: false
+    t.text     "bio"
+    t.string   "account_type"
+    t.string   "avatar"
+    t.datetime "joined"
+    t.boolean  "admin"
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "address"
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.string   "country"
     t.string   "postal"
-    t.string   "ip"
-    t.string   "latitude"
     t.string   "longitude"
-    t.boolean  "is_active"
-    t.boolean  "has_comments"
-    t.date     "date"
-    t.time     "time"
-    t.integer  "rating"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "latitude"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "tweets", force: :cascade do |t|
-    t.string   "body"
-    t.string   "user"
-    t.string   "image"
-    t.string   "location"
-    t.string   "tweet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "url"
-    t.date     "date"
-    t.string   "Latitude"
-    t.string   "Longitude"
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
-
   resources :content_attachments
-
   resources :contents
+  devise_for :users
 
-  resources :tweets
-
-  resources :post_attachments
-
-  devise_for :admins
-  resources :posts
+  get 'content/new', to: 'content#new', :as => :newContent
+  get 'content/index', to: 'content#index', :as => :contentIndex 
+  get 'content_attachments/new', to: 'content_attachments#new', :as => :newContentAttachment
   get 'welcome/index', to: 'welcome#index', :as => :index
   root 'welcome#index'
-
   post 'contents/create', to: 'contents#create', :as => :createContent
 
   # The priority is based upon order of creation: first created -> highest priority.

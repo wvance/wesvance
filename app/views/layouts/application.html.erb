@@ -40,22 +40,22 @@
 					</div>
 					<div class="col-xs-5 col-xs-offset-0 col-sm-5 col-sm-offset-1 col-md-5 col-lg-6">
 						<!-- IF ADMIN, DISPLAY NEW POST FORM: ELSE DISPLAY ABOUT ME -->
-						<% if admin_signed_in?%>
+						<% if user_signed_in?%>
 							<div class="adminBar right">
 						  	<h4>
-						  		<%= link_to(:controller => "contents", :action => "new" ) do%>
+						  		<%= link_to(newContent_path) do%>
 										<i class="fa fa-pencil-square-o fa-2x icon"></i>
 									<%end%> 
-									<%= link_to(:controller => "contents", :action => "index" ) do%>
+									<%= link_to(contentIndex_path) do%>
 										<i class="fa fa-file-o fa-2x icon"></i>
 									<%end%> 
-									<%= link_to(:controller => "content_attachments", :action => "new" ) do%>
+									<%= link_to(newContentAttachment_path) do%>
 										<i class="fa fa-picture-o fa-2x icon"></i>
 									<%end%> 
 									<%= link_to(createContent_path(@content, content: {:kind => "twitter"}), :method => :post) do%>
 										<i class="fa fa-retweet fa-2x icon"></i>
 									<%end%>
-						  		<%= link_to(destroy_admin_session_path, :method => :delete) do%>
+						  		<%= link_to(destroy_user_session_path, :method => :delete) do%>
 						  			<i class="fa fa-user-times fa-2x icon"></i>
 						  		<%end%>
 						  	</h4>

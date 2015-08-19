@@ -1,7 +1,5 @@
 class Content < ActiveRecord::Base
-	belongs_to :admins
-	has_many :posts
-	has_many :tweets
+	belongs_to :users
 	has_many :content_attachments
 
 	validates :external_id, uniqueness: true , :allow_blank => true, :allow_nil => true

@@ -1,13 +1,31 @@
-class DeviseCreateAdmins < ActiveRecord::Migration
+class DeviseCreateUsers < ActiveRecord::Migration
   def change
-    create_table(:admins) do |t|
+    create_table(:users) do |t|
       ## Database authenticatable
       t.string :firstName
       t.string :lastName
-      t.string :fullName
-      
+      t.string :fullName 
+      t.string :userName 
       t.string :email,              null: false, default: ""
+      t.text :bio
+
+      t.string :account_type
+      t.string :avatar
+      t.datetime :joined
+
+      t.boolean :admin
+
       t.string :encrypted_password, null: false, default: ""
+
+      # ADDRESS
+      t.string :address
+      t.string :street
+      t.string :city
+      t.string :state
+      t.string :postal
+
+      t.string :longitude
+      t.string :latitude
 
       ## Recoverable
       t.string   :reset_password_token
@@ -38,8 +56,8 @@ class DeviseCreateAdmins < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :admins, :email,                unique: true
-    add_index :admins, :reset_password_token, unique: true
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
     # add_index :admins, :confirmation_token,   unique: true
     # add_index :admins, :unlock_token,         unique: true
   end

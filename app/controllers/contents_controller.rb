@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :authenticate_admin!, only:[:index, :new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, only:[:index, :new, :edit, :create, :update, :destroy]
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   include TwitterHelper
@@ -49,7 +49,7 @@ class ContentsController < ApplicationController
       end
 
     elsif @content.kind == "post"
-      @content.author = current_admin.email
+      @content.author = current_user.email
 
       # GEO LOCATION: USE PRECISE LAT LONG IF POSSIBLE, OTHERWISE USE IP CONVERSION
       if cookies[:lat_lng] != nil
